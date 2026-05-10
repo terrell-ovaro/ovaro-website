@@ -7,7 +7,18 @@
       "Bash(npx create-next-app@latest *)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(rm *)",
+      "Bash(npx tsc *)",
+      "Bash(sed -i '' 's|import { NavDropdown } from \"./components/NavDropdown\";|import { NavDropdown } from \"./components/NavDropdown\";\\\\nimport { FacilitiesDropdown } from \"./components/FacilitiesDropdown\";|' '/Users/terrellhare/Desktop/Ovaro Website/app/page.tsx')",
+      "Bash(sed -i '' 's|import { NavDropdown } from \"../components/NavDropdown\";|import { NavDropdown } from \"../components/NavDropdown\";\\\\nimport { FacilitiesDropdown } from \"../components/FacilitiesDropdown\";|' '/Users/terrellhare/Desktop/Ovaro Website/app/service-areas/page.tsx')",
+      "Bash(sed -i '' 's|import { NavDropdown } from \"../components/NavDropdown\";|import { NavDropdown } from \"../components/NavDropdown\";\\\\nimport { FacilitiesDropdown } from \"../components/FacilitiesDropdown\";|' '/Users/terrellhare/Desktop/Ovaro Website/app/contact/page.tsx')",
+      "Bash(sed -i '' 's|import { NavDropdown } from \"../../components/NavDropdown\";|import { NavDropdown } from \"../../components/NavDropdown\";\\\\nimport { FacilitiesDropdown } from \"../../components/FacilitiesDropdown\";|' '/Users/terrellhare/Desktop/Ovaro Website/app/__TRACKED_VAR__')",
+      "Bash(sed -i '' 's|import { NavDropdown } from \"../components/NavDropdown\";|import { NavDropdown } from \"../components/NavDropdown\";\\\\nimport { FacilitiesDropdown } from \"../components/FacilitiesDropdown\";|' '/Users/terrellhare/Desktop/Ovaro Website/app/__TRACKED_VAR__')",
+      "Bash(python3 *)",
+      "Bash(sed -i '' 's|href=\"/contact\" className=\"btn-primary\" style={{ padding:\"10px 22px\"|href=\"/get-a-quote\" className=\"btn-primary\" style={{ padding:\"10px 22px\"|g' \"/Users/terrellhare/Desktop/Ovaro Website/app/contact/page.tsx\")",
+      "Bash(sed -i '' 's|href=\"/contact\" className=\"btn-primary\" style={{ padding: \"10px 22px\"|href=\"/get-a-quote\" className=\"btn-primary\" style={{ padding: \"10px 22px\"|g' \"/Users/terrellhare/Desktop/Ovaro Website/app/contact/page.tsx\")",
+      "Bash(git *)"
     ]
   }
 }
