@@ -9,6 +9,7 @@ import { NavDropdown } from "./components/NavDropdown";
 import { FacilitiesDropdown } from "./components/FacilitiesDropdown";
 import { MobileNav } from "./components/MobileNav";
 import { LogoBubble } from "./components/LogoBubble";
+import { Footer } from "./components/Footer";
 import { LocalBusinessSchema } from "./components/LocalBusinessSchema";
 
 export const metadata: Metadata = {
@@ -283,7 +284,7 @@ export default function Home() {
                       <path d="M3 8h10M9 4l4 4-4 4" />
                     </svg>
                   </Link>
-                  <a href="#services" className="btn-ghost">Our Services</a>
+                  <Link href="/services" className="btn-ghost">Our Services</Link>
                 </div>
 
                 {/* Trust chips */}
@@ -943,8 +944,10 @@ export default function Home() {
               the business.
             </p>
 
-            {/* Email capture */}
-            <div
+            {/* Email capture — carries the typed email to the quote form */}
+            <form
+              action="/get-a-quote"
+              method="get"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
@@ -955,6 +958,7 @@ export default function Home() {
             >
               <input
                 type="email"
+                name="email"
                 placeholder="Email address"
                 style={{
                   fontFamily: FS,
@@ -970,10 +974,10 @@ export default function Home() {
                   backdropFilter: "blur(4px)",
                 }}
               />
-              <Link href="/get-a-quote" className="btn-white">
+              <button type="submit" className="btn-white">
                 Get a Free Quote
-              </Link>
-            </div>
+              </button>
+            </form>
 
             {/* Promise */}
             <p
@@ -990,188 +994,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* ── Footer ──────────────────────────────── */}
-      <footer
-        style={{
-          background: "var(--green)",
-          padding: "72px 24px 40px",
-          color: "var(--cream)",
-        }}
-      >
-        <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-          {/* Top row */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-              gap: "48px",
-              marginBottom: "64px",
-            }}
-          >
-            {/* Brand */}
-            <div>
-              <div
-                style={{
-                  fontFamily: FD,
-                  fontSize: "1.3rem",
-                  color: "var(--cream)",
-                  marginBottom: "10px",
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                Ovaro Commercial
-              </div>
-              <p
-                style={{
-                  fontFamily: FS,
-                  fontSize: "0.825rem",
-                  color: "rgba(241,237,226,0.5)",
-                  lineHeight: 1.65,
-                  maxWidth: "220px",
-                }}
-              >
-                Austin&rsquo;s trusted commercial cleaning company since 2017.
-                Family-owned, fully insured, and built on accountability.
-              </p>
-            </div>
-
-            {/* Services */}
-            <div>
-              <div
-                style={{
-                  fontFamily: FS,
-                  fontSize: "0.7rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "rgba(241,237,226,0.4)",
-                  marginBottom: "16px",
-                }}
-              >
-                Services
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                {[
-                  { label: "Janitorial Services",  href: "/services/janitorial" },
-                  { label: "Green Cleaning",        href: "/services/green-cleaning" },
-                  { label: "Day Porter",            href: "/services/day-porter" },
-                  { label: "Post-Construction",     href: "/services/post-construction" },
-                  { label: "Deep Cleaning",         href: "/services/deep-cleaning" },
-                ].map(({ label, href }) => (
-                  <a key={label} href={href} className="footer-link">{label}</a>
-                ))}
-              </div>
-            </div>
-
-            {/* Company */}
-            <div>
-              <div
-                style={{
-                  fontFamily: FS,
-                  fontSize: "0.7rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "rgba(241,237,226,0.4)",
-                  marginBottom: "16px",
-                }}
-              >
-                Company
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                {["About", "Service Areas", "Contact"].map((l) => (
-                  <a key={l} href={`#${l.toLowerCase().replace(" ", "-")}`} className="footer-link">{l}</a>
-                ))}
-              </div>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <div
-                style={{
-                  fontFamily: FS,
-                  fontSize: "0.7rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "rgba(241,237,226,0.4)",
-                  marginBottom: "16px",
-                }}
-              >
-                Contact
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                  fontFamily: FS,
-                  fontSize: "0.875rem",
-                  color: "rgba(241,237,226,0.6)",
-                  lineHeight: 1.5,
-                }}
-              >
-                <span>Austin, TX &amp; Greater Metro</span>
-                <span>Georgetown · Leander · Round Rock</span>
-                <span>Pflugerville · Bee Cave · Lakeway</span>
-                <a
-                  href="mailto:terrell@ovarocommercial.com"
-                  style={{ color: "var(--blue)", textDecoration: "none" }}
-                >
-                  terrell@ovarocommercial.com
-                </a>
-                <span
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    fontSize: "0.75rem",
-                    color: "rgba(241,237,226,0.4)",
-                    marginTop: "4px",
-                  }}
-                >
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round">
-                    <path d="M12 2L4 6v6c0 5.25 3.5 9.75 8 11 4.5-1.25 8-5.75 8-11V6L12 2z" />
-                  </svg>
-                  Licensed &amp; Insured
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom bar */}
-          <div
-            style={{
-              borderTop: "1px solid rgba(241,237,226,0.08)",
-              paddingTop: "28px",
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "12px",
-            }}
-          >
-            <p
-              style={{
-                fontFamily: FS,
-                fontSize: "0.775rem",
-                color: "rgba(241,237,226,0.3)",
-              }}
-            >
-              © 2025 Ovaro Commercial LLC. All rights reserved.
-            </p>
-            <p
-              style={{
-                fontFamily: FS,
-                fontSize: "0.775rem",
-                color: "rgba(241,237,226,0.3)",
-              }}
-            >
-              Commercial Cleaning · Austin, TX · Est. 2017
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

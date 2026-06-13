@@ -88,12 +88,12 @@ export default function OfficeCleaningPage() {
         </section>
 
         {/* ── Hero Photo ── */}
-        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+        <div className="photo-strip">
           <Image
             src="/images/Vacuuming 1.webp"
             alt="Commercial cleaner vacuuming a professional Austin office space"
             fill
-            sizes="100vw"
+            sizes="(max-width: 1028px) 100vw, 980px"
             style={{ objectFit:"cover",objectPosition:"center 25%" }}
           />
           <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />

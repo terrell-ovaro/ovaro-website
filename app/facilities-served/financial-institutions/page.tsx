@@ -88,12 +88,12 @@ export default function FinancialInstitutionsPage() {
         </section>
 
         {/* ── Hero Photo ── */}
-        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+        <div className="photo-strip">
           <Image
             src="/images/Commercial Floor Waxing 1.jpg"
             alt="Commercial floor waxing service in an Austin financial institution"
             fill
-            sizes="100vw"
+            sizes="(max-width: 1028px) 100vw, 980px"
             style={{ objectFit:"cover",objectPosition:"center 40%" }}
           />
           <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />

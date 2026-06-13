@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { NavDropdown } from "../components/NavDropdown";
@@ -49,6 +49,16 @@ export default function GetAQuotePage() {
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [selectedService, setSelectedService] = useState("");
+  const [email, setEmail] = useState("");
+
+  // Pre-fill email if it was entered on the home page CTA (?email=...).
+  // Done in an effect (not lazy init) so server and client both render empty
+  // first, avoiding a hydration mismatch on the controlled input.
+  useEffect(() => {
+    const fromUrl = new URLSearchParams(window.location.search).get("email");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional one-time read from URL on mount
+    if (fromUrl) setEmail(fromUrl);
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -241,7 +251,7 @@ export default function GetAQuotePage() {
                     <label className="form-label" style={{ fontFamily:FS }}>
                       Email Address <span style={{ color:"var(--blue)" }}>*</span>
                     </label>
-                    <input name="email" type="email" required className="form-input" placeholder="jane@company.com" />
+                    <input name="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="form-input" placeholder="jane@company.com" />
                   </div>
                   <div className="form-group">
                     <label className="form-label" style={{ fontFamily:FS }}>Phone Number <span style={{ color:"var(--blue)" }}>*</span></label>

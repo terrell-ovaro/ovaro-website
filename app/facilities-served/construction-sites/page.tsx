@@ -88,13 +88,13 @@ export default function ConstructionSitesPage() {
         </section>
 
         {/* ── Hero Photo ── */}
-        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+        <div className="photo-strip">
           <Image
-            src="/images/Janitorial 1.jpg"
-            alt="Post-construction floor cleaning in an Austin commercial building"
+            src="/images/Construction Debris 1.webp"
+            alt="Ovaro crew removing construction debris and dust from a commercial build-out in Austin"
             fill
-            sizes="100vw"
-            style={{ objectFit:"cover",objectPosition:"center 35%" }}
+            sizes="(max-width: 1028px) 100vw, 980px"
+            style={{ objectFit:"cover",objectPosition:"center 45%" }}
           />
           <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
         </div>

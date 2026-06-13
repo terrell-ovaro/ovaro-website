@@ -290,12 +290,12 @@ export default function DeepCleaningPage() {
         </section>
 
         {/* ── Hero Photo ── */}
-        <div style={{ position: "relative", height: "420px", overflow: "hidden" }}>
+        <div className="photo-strip">
           <Image
             src="/images/Janitorial 10.webp"
             alt="Commercial cleaner performing detailed deep cleaning in an Austin facility"
             fill
-            sizes="100vw"
+            sizes="(max-width: 1028px) 100vw, 980px"
             style={{ objectFit: "cover", objectPosition: "center 20%" }}
           />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />

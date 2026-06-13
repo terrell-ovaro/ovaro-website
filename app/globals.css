@@ -943,17 +943,46 @@ input:focus { outline: none; border-color: var(--blue) !important; }
   100% { transform: translateX(220%)  skewX(-8deg); }
 }
 
+/* Contained, framed photo (replaces full-bleed strips — sharper on wide
+   screens because the source isn't stretched edge-to-edge). */
+.photo-strip {
+  position: relative;
+  max-width: 980px;
+  width: calc(100% - 48px);
+  height: 400px;
+  margin: 56px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(27, 61, 47, 0.13);
+}
+
+@media (max-width: 767px) {
+  .photo-strip {
+    height: 240px;
+    margin: 36px auto;
+    border-radius: 12px;
+  }
+}
+
 .cred-strip {
   position: relative;
   overflow: hidden;
   background: var(--white);
   border: 1px solid var(--border-blue);
   border-radius: 14px;
-  padding: 28px 36px;
+  padding: 32px 48px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
+}
+
+/* Center the three credential items within their column on desktop */
+.cred-items-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .cred-strip::after {

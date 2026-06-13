@@ -88,12 +88,12 @@ export default function RetailLocationsPage() {
         </section>
 
         {/* ── Hero Photo ── */}
-        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+        <div className="photo-strip">
           <Image
             src="/images/Janitorial 7.webp"
             alt="Commercial cleaner maintaining a retail storefront entrance in Austin"
             fill
-            sizes="100vw"
+            sizes="(max-width: 1028px) 100vw, 980px"
             style={{ objectFit:"cover",objectPosition:"center 30%" }}
           />
           <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />

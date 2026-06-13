@@ -1,19 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not set");
+      return NextResponse.json({ success: false, error: "Email not configured" }, { status: 500 });
+    }
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const html = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1B3D2F;">
@@ -101,13 +97,18 @@ export async function POST(req: NextRequest) {
       </div>
     `;
 
-    await transporter.sendMail({
-      from: `"Ovaro Commercial Website" <${process.env.SMTP_USER}>`,
-      to: "terrell@ovarocommercial.com",
+    const { error } = await resend.emails.send({
+      from: process.env.QUOTE_FROM || "Ovaro Commercial <quotes@ovarocommercial.com>",
+      to: process.env.QUOTE_TO || "terrell@ovarocommercial.com",
       replyTo: data.email,
       subject: `Quote Request — ${data.businessName} (${data.service || "General"})`,
       html,
     });
+
+    if (error) {
+      console.error("Resend error:", error);
+      return NextResponse.json({ success: false, error: "Failed to send" }, { status: 500 });
+    }
 
     return NextResponse.json({ success: true });
   } catch (err) {
