@@ -57,29 +57,41 @@ export function Footer() {
     <footer style={{ background: "var(--green)" }}>
 
       {/* ── Main content ── */}
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "56px 24px 0" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "72px 24px 0" }}>
 
-        {/* Brand strip — always full width */}
-        <div style={{ paddingBottom: "40px", borderBottom: "1px solid rgba(241,237,226,0.08)", marginBottom: "40px" }}>
-          <Link href="/" style={{ fontFamily: FD, fontSize: "1.4rem", letterSpacing: "-0.01em", color: "var(--cream)", textDecoration: "none", display: "block", marginBottom: "8px" }}>
-            Ovaro Commercial
-          </Link>
-          <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "rgba(241,237,226,0.5)", lineHeight: 1.6, marginBottom: "18px", maxWidth: "340px" }}>
-            Family-owned commercial cleaning, serving Greater Austin since 2017.
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center" }}>
-            <a href="tel:2109046974" style={{ fontFamily: FS, fontSize: "0.9rem", color: "rgba(241,237,226,0.75)", textDecoration: "none" }}>
-              (210) 904-6974
-            </a>
-            <span style={{ color: "rgba(241,237,226,0.2)" }}>·</span>
-            <a href="mailto:terrell@ovarocommercial.com" style={{ fontFamily: FS, fontSize: "0.9rem", color: "rgba(105,150,173,0.85)", textDecoration: "none" }}>
-              terrell@ovarocommercial.com
-            </a>
+        {/* Top: brand block + link columns */}
+        <div className="footer-top">
+
+          {/* Brand block */}
+          <div className="footer-brand">
+            <Link href="/" style={{ fontFamily: FD, fontSize: "1.5rem", letterSpacing: "-0.01em", color: "var(--cream)", textDecoration: "none", display: "inline-block", marginBottom: "14px" }}>
+              Ovaro Commercial
+            </Link>
+            <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "rgba(241,237,226,0.5)", lineHeight: 1.7, marginBottom: "22px", maxWidth: "300px" }}>
+              Austin&rsquo;s trusted commercial cleaning company since 2017 — family-owned, fully insured, and built on accountability.
+            </p>
+
+            {/* Contact */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "20px" }}>
+              <a href="tel:2109046974" style={{ fontFamily: FD, fontSize: "1.2rem", letterSpacing: "-0.01em", color: "var(--cream)", textDecoration: "none" }}>
+                (210) 904-6974
+              </a>
+              <a href="mailto:terrell@ovarocommercial.com" style={{ fontFamily: FS, fontSize: "0.875rem", color: "rgba(105,150,173,0.9)", textDecoration: "none" }}>
+                terrell@ovarocommercial.com
+              </a>
+            </div>
+
+            {/* Trust badge */}
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "8px 14px", borderRadius: "20px", border: "1px solid rgba(241,237,226,0.15)", background: "rgba(241,237,226,0.04)" }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(105,150,173,0.95)" strokeWidth="1.6" strokeLinejoin="round">
+                <path d="M12 2L4 6v6c0 5.25 3.5 9.75 8 11 4.5-1.25 8-5.75 8-11V6L12 2z" />
+                <path d="M9 12l2 2 4-4" strokeLinecap="round" />
+              </svg>
+              <span style={{ fontFamily: FS, fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.05em", color: "rgba(241,237,226,0.72)" }}>
+                Licensed · Bonded · Insured
+              </span>
+            </div>
           </div>
-        </div>
-
-        {/* Link columns */}
-        <div className="footer-cols">
 
           {/* Services */}
           <div>
@@ -100,6 +112,16 @@ export function Footer() {
           </div>
 
         </div>
+
+        {/* Service-area line */}
+        <div style={{ marginTop: "52px", paddingTop: "28px", borderTop: "1px solid rgba(241,237,226,0.08)" }}>
+          <div style={{ fontFamily: FS, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(241,237,226,0.35)", marginBottom: "10px" }}>
+            Proudly Serving Greater Austin
+          </div>
+          <p style={{ fontFamily: FS, fontSize: "0.85rem", color: "rgba(241,237,226,0.55)", lineHeight: 1.7, margin: 0 }}>
+            Austin &nbsp;·&nbsp; Round Rock &nbsp;·&nbsp; Georgetown &nbsp;·&nbsp; Leander &nbsp;·&nbsp; Bee Cave &nbsp;·&nbsp; Lakeway &nbsp;·&nbsp; Pflugerville &nbsp;·&nbsp; Manor
+          </p>
+        </div>
       </div>
 
       {/* ── Bottom bar ── */}
@@ -109,7 +131,7 @@ export function Footer() {
             © {new Date().getFullYear()} Ovaro Commercial LLC. All rights reserved.
           </p>
           <p style={{ fontFamily: FS, fontSize: "0.75rem", color: "rgba(241,237,226,0.28)" }}>
-            Licensed &amp; Insured &nbsp;·&nbsp; Austin, TX &nbsp;·&nbsp; Est. 2017
+            Commercial Cleaning &nbsp;·&nbsp; Austin, TX &nbsp;·&nbsp; Est. 2017
           </p>
         </div>
       </div>
