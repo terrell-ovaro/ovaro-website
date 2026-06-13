@@ -394,6 +394,9 @@ input:focus { outline: none; border-color: var(--blue) !important; }
   /* ── CTA top card (facilities pages) — right → bottom ── */
   .cta-top-card { position: static !important; width: 100% !important; margin-top: 32px; }
 
+  /* ── Contact phone number: shrink so it never wraps next to the badge ── */
+  .contact-phone-number { font-size: 1.2rem !important; }
+
   /* ── Hero: reduce padding ── */
   [style*="padding: \"80px 24px 96px\""],
   [style*="padding: '80px 24px 96px'"] {

@@ -118,7 +118,7 @@ export default function ContactPage() {
                   <div style={{ fontFamily: FS, fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--green)", opacity: 0.4, marginBottom: "3px" }}>
                     Phone
                   </div>
-                  <div style={{ fontFamily: FD, fontSize: "1.45rem", letterSpacing: "-0.01em", color: "var(--green)", lineHeight: 1 }}>
+                  <div className="contact-phone-number" style={{ fontFamily: FD, fontSize: "1.45rem", letterSpacing: "-0.01em", color: "var(--green)", lineHeight: 1, whiteSpace: "nowrap" }}>
                     (210) 904-6974
                   </div>
                   <div style={{ fontFamily: FS, fontSize: "0.72rem", color: "var(--green)", opacity: 0.45, marginTop: "4px" }}>
