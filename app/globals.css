@@ -377,13 +377,10 @@ input:focus { outline: none; border-color: var(--blue) !important; }
   .footer-cols > div:last-child a {
     margin-bottom: 8px !important;
   }
-  /* Footer top: brand full width, then link columns 2-up */
+  /* Footer top: stack brand + each link group full width (no uneven columns) */
   .footer-top {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 36px 16px !important;
-  }
-  .footer-top > .footer-brand {
-    grid-column: 1 / -1 !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
   }
   .footer-bottom-bar {
     flex-direction: column !important;
@@ -396,6 +393,12 @@ input:focus { outline: none; border-color: var(--blue) !important; }
 
   /* ── Contact phone number: shrink so it never wraps next to the badge ── */
   .contact-phone-number { font-size: 1.2rem !important; }
+
+  /* ── Hero overline badge: shrink so it fits on one line ── */
+  .hero-overline-text {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.05em !important;
+  }
 
   /* ── Hero: reduce padding ── */
   [style*="padding: \"80px 24px 96px\""],

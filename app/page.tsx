@@ -235,7 +235,7 @@ export default function Home() {
               }}
             >
               <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--blue)", flexShrink: 0 }} />
-              <span style={{ fontFamily: FS, fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--blue)" }}>
+              <span className="hero-overline-text" style={{ fontFamily: FS, fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--blue)", whiteSpace: "nowrap" }}>
                 Commercial Cleaning · Austin, TX · Est. 2017
               </span>
             </div>
