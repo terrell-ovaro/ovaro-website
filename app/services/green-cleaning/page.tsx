@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { NavDropdown } from "../../components/NavDropdown";
 import { FacilitiesDropdown } from "../../components/FacilitiesDropdown";
 import { Footer } from "../../components/Footer";
@@ -140,9 +142,9 @@ export default function GreenCleaningPage() {
               </a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
             Get a Quote
-          </a>
+          </Link>
           <MobileNav />
         </div>
       </nav>
@@ -157,9 +159,9 @@ export default function GreenCleaningPage() {
 
               {/* Breadcrumb */}
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "28px", fontFamily: FS, fontSize: "0.8rem", color: "var(--green)", opacity: 0.5 }}>
-                <a href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</a>
+                <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</Link>
                 <span>/</span>
-                <a href="/services" style={{ textDecoration: "none", color: "inherit" }}>Services</a>
+                <Link href="/services" style={{ textDecoration: "none", color: "inherit" }}>Services</Link>
                 <span>/</span>
                 <span style={{ color: "var(--blue)", opacity: 1 }}>Green Cleaning</span>
               </div>
@@ -237,6 +239,18 @@ export default function GreenCleaningPage() {
 
           </div>
         </section>
+
+        {/* ── Hero Photo ── */}
+        <div style={{ position: "relative", height: "420px", overflow: "hidden" }}>
+          <Image
+            src="/images/Commercial Cleaning 1.webp"
+            alt="Professional commercial cleaning team working in an Austin office"
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover", objectPosition: "center 40%" }}
+          />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
 
         {/* ── What Makes It Green ── */}
         <section style={{ background: "var(--white)", padding: "96px 24px" }}>
@@ -346,7 +360,7 @@ export default function GreenCleaningPage() {
             <p style={{ fontFamily: FS, fontSize: "1rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "36px" }}>
               Switch to green cleaning without changing your schedule or standards. Tell us about your space and we&rsquo;ll build a plan around it — response within 2 hours.
             </p>
-            <a href="/get-a-quote" className="btn-white">Get a Free Quote</a>
+            <Link href="/get-a-quote" className="btn-white">Get a Free Quote</Link>
           </div>
         </section>
 

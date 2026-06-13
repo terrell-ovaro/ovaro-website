@@ -1,3 +1,4 @@
+import Link from "next/link";
 const FD = "var(--font-display)";
 const FS = "var(--font-sans, 'DM Sans', sans-serif)";
 
@@ -60,9 +61,9 @@ export function Footer() {
 
         {/* Brand strip — always full width */}
         <div style={{ paddingBottom: "40px", borderBottom: "1px solid rgba(241,237,226,0.08)", marginBottom: "40px" }}>
-          <a href="/" style={{ fontFamily: FD, fontSize: "1.4rem", letterSpacing: "-0.01em", color: "var(--cream)", textDecoration: "none", display: "block", marginBottom: "8px" }}>
+          <Link href="/" style={{ fontFamily: FD, fontSize: "1.4rem", letterSpacing: "-0.01em", color: "var(--cream)", textDecoration: "none", display: "block", marginBottom: "8px" }}>
             Ovaro Commercial
-          </a>
+          </Link>
           <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "rgba(241,237,226,0.5)", lineHeight: 1.6, marginBottom: "18px", maxWidth: "340px" }}>
             Family-owned commercial cleaning, serving Greater Austin since 2017.
           </p>

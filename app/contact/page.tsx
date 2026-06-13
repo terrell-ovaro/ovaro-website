@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { Metadata } from "next";
+import { ContactForm } from "./ContactForm";
 import { NavDropdown } from "../components/NavDropdown";
 import { FacilitiesDropdown } from "../components/FacilitiesDropdown";
 import { Footer } from "../components/Footer";
@@ -54,9 +56,9 @@ export default function ContactPage() {
               </a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
             Get a Quote
-          </a>
+          </Link>
           <MobileNav />
         </div>
       </nav>
@@ -79,7 +81,7 @@ export default function ContactPage() {
 
             {/* Breadcrumb */}
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "32px", fontFamily: FS, fontSize: "0.8rem", color: "var(--green)", opacity: 0.45 }}>
-              <a href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</a>
+              <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</Link>
               <span>/</span>
               <span style={{ color: "var(--blue)", opacity: 1 }}>Contact</span>
             </div>
@@ -212,77 +214,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <form style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
-
-              {/* Name + Business row */}
-              <div className="mobile-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
-                <div className="form-group">
-                  <label className="form-label" style={{ fontFamily: FS }}>Your Name</label>
-                  <input type="text" className="form-input" placeholder="First Last" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label" style={{ fontFamily: FS }}>Business Name</label>
-                  <input type="text" className="form-input" placeholder="Company, LLC" />
-                </div>
-              </div>
-
-              {/* Email + Phone row */}
-              <div className="mobile-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
-                <div className="form-group">
-                  <label className="form-label" style={{ fontFamily: FS }}>Email Address</label>
-                  <input type="email" className="form-input" placeholder="you@company.com" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label" style={{ fontFamily: FS }}>Phone Number</label>
-                  <input type="tel" className="form-input" placeholder="(555) 000-0000" />
-                </div>
-              </div>
-
-              {/* Location + Service row */}
-              <div className="mobile-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
-                <div className="form-group">
-                  <label className="form-label" style={{ fontFamily: FS }}>City / Area</label>
-                  <input type="text" className="form-input" placeholder="Round Rock, TX" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label" style={{ fontFamily: FS }}>Service Type</label>
-                  <select className="form-select" style={{ fontFamily: FS, color: "var(--green)" }}>
-                    <option value="" disabled selected>Select a service</option>
-                    {services.map((s) => (
-                      <option key={s} value={s}>{s}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* Message */}
-              <div className="form-group">
-                <label className="form-label" style={{ fontFamily: FS }}>Tell Us About Your Space</label>
-                <textarea
-                  className="form-textarea"
-                  placeholder="Square footage, frequency, any specific needs..."
-                />
-              </div>
-
-              {/* Divider */}
-              <div style={{ height: "1px", background: "var(--border)" }} />
-
-              {/* Submit */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "16px" }}>
-                <button type="submit" className="btn-submit">
-                  Send My Request
-                  <span className="btn-arrow">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M3 8h10M9 4l4 4-4 4"/>
-                    </svg>
-                  </span>
-                </button>
-                <p style={{ fontFamily: FS, fontSize: "0.75rem", color: "var(--green)", opacity: 0.4 }}>
-                  No obligation &nbsp;·&nbsp; Response within 2 hours
-                </p>
-              </div>
-
-            </form>
+            <ContactForm services={services} />
           </div>
         </div>
 

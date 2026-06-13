@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { NavDropdown } from "../../components/NavDropdown";
 import { FacilitiesDropdown } from "../../components/FacilitiesDropdown";
@@ -167,9 +169,9 @@ export default function PostConstructionPage() {
               </a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
             Get a Quote
-          </a>
+          </Link>
           <MobileNav />
         </div>
       </nav>
@@ -184,9 +186,9 @@ export default function PostConstructionPage() {
 
               {/* Breadcrumb */}
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "28px", fontFamily: FS, fontSize: "0.8rem", color: "var(--green)", opacity: 0.5 }}>
-                <a href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</a>
+                <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</Link>
                 <span>/</span>
-                <a href="/services" style={{ textDecoration: "none", color: "inherit" }}>Services</a>
+                <Link href="/services" style={{ textDecoration: "none", color: "inherit" }}>Services</Link>
                 <span>/</span>
                 <span style={{ color: "var(--blue)", opacity: 1 }}>Post-Construction</span>
               </div>
@@ -264,6 +266,18 @@ export default function PostConstructionPage() {
 
           </div>
         </section>
+
+        {/* ── Hero Photo ── */}
+        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+          <Image
+            src="/images/Janitorial 8.jpg"
+            alt="Dust and debris removal after construction in an Austin facility"
+            fill
+            sizes="100vw"
+            style={{ objectFit:"cover",objectPosition:"center 30%" }}
+          />
+          <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
 
         {/* ── What We Clean ── */}
         <section style={{ background: "var(--white)", padding: "96px 24px" }}>
@@ -367,7 +381,7 @@ export default function PostConstructionPage() {
             <p style={{ fontFamily: FS, fontSize: "1rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "36px" }}>
               Tell us about your project — square footage, scope, and your target handover date. We&rsquo;ll build a post-construction cleaning plan around your timeline. Response within 2 hours.
             </p>
-            <a href="/get-a-quote" className="btn-white">Get a Free Quote</a>
+            <Link href="/get-a-quote" className="btn-white">Get a Free Quote</Link>
           </div>
         </section>
 

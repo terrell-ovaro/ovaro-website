@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { NavDropdown } from "../components/NavDropdown";
 import { FacilitiesDropdown } from "../components/FacilitiesDropdown";
@@ -174,9 +176,9 @@ export default function ServiceAreasPage() {
               </a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
             Get a Quote
-          </a>
+          </Link>
           <MobileNav />
         </div>
       </nav>
@@ -189,7 +191,7 @@ export default function ServiceAreasPage() {
 
             {/* Breadcrumb */}
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "28px", fontFamily: FS, fontSize: "0.8rem", color: "var(--green)", opacity: 0.5 }}>
-              <a href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</a>
+              <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</Link>
               <span>/</span>
               <span style={{ color: "var(--blue)", opacity: 1 }}>Service Areas</span>
             </div>
@@ -228,6 +230,18 @@ export default function ServiceAreasPage() {
             </div>
           </div>
         </section>
+
+        {/* ── Hero Photo ── */}
+        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+          <Image
+            src="/images/Commercial Cleaning 1.webp"
+            alt="Ovaro Commercial team cleaning an office in the Greater Austin area"
+            fill
+            sizes="100vw"
+            style={{ objectFit:"cover",objectPosition:"center 40%" }}
+          />
+          <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
 
         {/* ── Coverage Stats ── */}
         <section style={{ background: "var(--white)", padding: "48px 24px", borderBottom: "1px solid var(--border)" }}>
@@ -403,9 +417,9 @@ export default function ServiceAreasPage() {
               Tell us your location and what you need. We&rsquo;ll respond within 2 hours with
               a clear, no-obligation quote built for your space.
             </p>
-            <a href="/get-a-quote" className="btn-white">
+            <Link href="/get-a-quote" className="btn-white">
               Get a Free Quote
-            </a>
+            </Link>
           </div>
         </section>
 

@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { NavDropdown } from "../components/NavDropdown";
 import { FacilitiesDropdown } from "../components/FacilitiesDropdown";
@@ -70,9 +72,9 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
             Get a Quote
-          </a>
+          </Link>
           <MobileNav />
         </div>
       </nav>
@@ -112,7 +114,7 @@ export default function ServicesPage() {
                   opacity: 0.5,
                 }}
               >
-                <a href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</a>
+                <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</Link>
                 <span>/</span>
                 <span style={{ color: "var(--blue)", opacity: 1 }}>Facilities Served</span>
               </div>
@@ -299,6 +301,18 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* ── Hero Photo ── */}
+        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+          <Image
+            src="/images/Vacuuming 1.webp"
+            alt="Commercial cleaning across Austin business facilities"
+            fill
+            sizes="100vw"
+            style={{ objectFit:"cover",objectPosition:"center 25%" }}
+          />
+          <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
+
         {/* ── Services Grid ── */}
         <section
           style={{
@@ -426,9 +440,9 @@ export default function ServicesPage() {
               If your environment isn&rsquo;t listed above, reach out anyway. We&rsquo;ll
               tell you honestly whether we&rsquo;re the right fit.
             </p>
-            <a href="/get-a-quote" className="btn-white">
+            <Link href="/get-a-quote" className="btn-white">
               Get a Free Quote
-            </a>
+            </Link>
           </div>
         </section>
       </main>

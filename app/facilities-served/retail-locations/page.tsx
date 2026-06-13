@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { NavDropdown } from "../../components/NavDropdown";
 import { FacilitiesDropdown } from "../../components/FacilitiesDropdown";
@@ -7,7 +9,7 @@ import { LogoBubble } from "../../components/LogoBubble";
 
 export const metadata: Metadata = {
   title: "Retail Locations | Ovaro Commercial",
-  description: "Professional retail locations cleaning in Austin, TX. Family-owned since 2017. Consistent, reliable service — get a free quote and we respond within 2 hours.",
+  description: "Retail and storefront cleaning in Austin, TX. Spotless floors, fitting rooms, and entryways that keep customers focused on your products. Family-owned since 2017 — free quote, response in 2 hours.",
 };
 
 const FD = "var(--font-display)";
@@ -31,7 +33,7 @@ export default function RetailLocationsPage() {
               <a key={label} href={href} className="nav-link" style={{ fontFamily:FS }}>{label}</a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</a>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</Link>
           <MobileNav />
         </div>
       </nav>
@@ -44,8 +46,8 @@ export default function RetailLocationsPage() {
 
             <div style={{ maxWidth:"580px" }}>
               <div style={{ display:"flex",alignItems:"center",gap:"8px",marginBottom:"28px",fontFamily:FS,fontSize:"0.8rem",color:"var(--green)",opacity:0.5 }}>
-                <a href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</a><span>/</span>
-                <a href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</a><span>/</span>
+                <Link href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</Link><span>/</span>
+                <Link href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</Link><span>/</span>
                 <span style={{ color:"var(--blue)",opacity:1 }}>Retail Locations</span>
               </div>
               <div style={{ display:"flex",alignItems:"center",gap:"12px",marginBottom:"20px" }}>
@@ -73,17 +75,29 @@ export default function RetailLocationsPage() {
                   <span style={{ fontFamily:FS,fontSize:"0.72rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"var(--blue)" }}>Response within 2 hours</span>
                 </div>
                 <h3 style={{ fontFamily:FD,fontSize:"1.35rem",letterSpacing:"-0.015em",color:"var(--green)",lineHeight:1.1,marginBottom:"10px" }}>Ready for a retail space that sells?</h3>
-                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us about your location and hours. We'll schedule around your traffic patterns — response within 2 hours.</p>
-                <a href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
+                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us about your location and hours. We&rsquo;ll schedule around your traffic patterns — response within 2 hours.</p>
+                <Link href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
                   Get a Free Quote
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                </a>
+                </Link>
                 <p style={{ fontFamily:FS,fontSize:"0.7rem",color:"var(--green)",opacity:0.35,textAlign:"center",marginTop:"10px" }}>No obligation &nbsp;·&nbsp; Licensed &amp; Insured</p>
               </div>
             </div>
 
           </div>
         </section>
+
+        {/* ── Hero Photo ── */}
+        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+          <Image
+            src="/images/Janitorial 7.webp"
+            alt="Commercial cleaner maintaining a retail storefront entrance in Austin"
+            fill
+            sizes="100vw"
+            style={{ objectFit:"cover",objectPosition:"center 30%" }}
+          />
+          <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
 
         {/* ── What We Cover ── */}
         <section style={{ background:"var(--white)",padding:"88px 24px" }}>
@@ -119,7 +133,7 @@ export default function RetailLocationsPage() {
                     <h3 style={{ fontFamily: FD, fontSize: "1.1rem", letterSpacing: "-0.01em", color: "var(--green)", margin: 0 }}>Fitting Room Cleaning & Reset</h3>
                   </div>
                   <p style={{ fontFamily: FS, fontSize: "0.85rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.7, margin: 0 }}>
-                    Fitting rooms cleaned, sanitized, and reset after every close — floors, mirrors, hooks, and surfaces addressed so they're always ready for the next customer.
+                    Fitting rooms cleaned, sanitized, and reset after every close — floors, mirrors, hooks, and surfaces addressed so they&rsquo;re always ready for the next customer.
                   </p>
                 </div>
                 <div key="Window & Glass Cleaning" className="area-card">
@@ -226,13 +240,13 @@ export default function RetailLocationsPage() {
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>02</div>
                 <div style={{ width: "28px", height: "2px", background: "var(--blue)", marginBottom: "16px" }} />
                 <h3 style={{ fontFamily: FD, fontSize: "1.35rem", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "10px", lineHeight: 1.15 }}>Fitting rooms are the decision point</h3>
-                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Most purchase decisions happen in the fitting room. A dirty fitting room is a lost sale — and a reason customers don't come back.</p>
+                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Most purchase decisions happen in the fitting room. A dirty fitting room is a lost sale — and a reason customers don&rsquo;t come back.</p>
               </div>
               <div style={{ padding: "36px 40px 36px 0", paddingLeft: 2 > 0 ? "40px" : "0", borderLeft: 2 > 0 ? "1px solid var(--border)" : "none" }}>
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>03</div>
                 <div style={{ width: "28px", height: "2px", background: "var(--blue)", marginBottom: "16px" }} />
                 <h3 style={{ fontFamily: FD, fontSize: "1.35rem", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "10px", lineHeight: 1.15 }}>Consistent appearance builds brand loyalty</h3>
-                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Customers notice when a store looks different from visit to visit. Ovaro's consistent standard means your space always looks the way it should.</p>
+                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Customers notice when a store looks different from visit to visit. Ovaro&rsquo;s consistent standard means your space always looks the way it should.</p>
               </div>
             </div>
           </div>
@@ -355,7 +369,7 @@ export default function RetailLocationsPage() {
                   ))}
                 </div>
                 <blockquote style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--green)", opacity: 0.8, lineHeight: 1.75, fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1 }}>
-                  &ldquo;Retail is hard enough. Worrying about whether your floors are clean shouldn't be part of it. Ovaro has handled our two locations for three years without a single issue.&rdquo;
+                  &ldquo;Retail is hard enough. Worrying about whether your floors are clean shouldn&rsquo;t be part of it. Ovaro has handled our two locations for three years without a single issue.&rdquo;
                 </blockquote>
                 <div style={{ height: "1px", background: "var(--border)", marginBottom: "18px" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -376,8 +390,8 @@ export default function RetailLocationsPage() {
         <section style={{ background:"var(--blue)",padding:"88px 24px",textAlign:"center" }}>
           <div style={{ maxWidth:"600px",margin:"0 auto" }}>
             <h2 style={{ fontFamily:FD,fontSize:"clamp(2rem,4vw,3.25rem)",letterSpacing:"-0.022em",color:"#fff",lineHeight:1.05,marginBottom:"16px" }}>Your store reflects your brand.</h2>
-            <p style={{ fontFamily:FS,fontSize:"1rem",color:"rgba(255,255,255,0.75)",lineHeight:1.7,marginBottom:"36px" }}>Clean floors, spotless fitting rooms, and a polished entrance aren't optional in retail — they're part of the experience. Ovaro delivers that standard every day.</p>
-            <a href="/get-a-quote" className="btn-white">Get a Free Quote</a>
+            <p style={{ fontFamily:FS,fontSize:"1rem",color:"rgba(255,255,255,0.75)",lineHeight:1.7,marginBottom:"36px" }}>Clean floors, spotless fitting rooms, and a polished entrance aren&rsquo;t optional in retail — they&rsquo;re part of the experience. Ovaro delivers that standard every day.</p>
+            <Link href="/get-a-quote" className="btn-white">Get a Free Quote</Link>
           </div>
         </section>
 

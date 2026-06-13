@@ -213,6 +213,36 @@ input:focus { outline: none; border-color: var(--blue) !important; }
   .nav-mobile        { display: none !important; }
 }
 
+/* ══ Hero photo: stack full-width below text under 1024px ══ */
+@media (max-width: 1023px) {
+  .hero-photo {
+    width: 100% !important;
+    margin-top: 8px;
+  }
+  .hero-photo-inner {
+    width: 100% !important;
+    max-width: 480px;
+    height: 440px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-photo-inner {
+    height: 360px !important;
+  }
+}
+
+/* ══ About / Our Story: stack photo above text under 900px ══ */
+@media (max-width: 899px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .about-photo {
+    height: 360px !important;
+  }
+}
+
 /* ══ Mobile responsive (max 767px) ══════════════ */
 
 @media (max-width: 767px) {

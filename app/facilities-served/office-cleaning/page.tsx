@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { NavDropdown } from "../../components/NavDropdown";
 import { FacilitiesDropdown } from "../../components/FacilitiesDropdown";
 import { Footer } from "../../components/Footer";
@@ -7,7 +9,7 @@ import { LogoBubble } from "../../components/LogoBubble";
 
 export const metadata: Metadata = {
   title: "Office Cleaning | Ovaro Commercial",
-  description: "Professional office cleaning cleaning in Austin, TX. Family-owned since 2017. Consistent, reliable service — get a free quote and we respond within 2 hours.",
+  description: "Professional office cleaning in Austin, TX. Consistent, detail-oriented janitorial service for professional workspaces. Family-owned since 2017 — free quote, response within 2 hours.",
 };
 
 const FD = "var(--font-display)";
@@ -31,7 +33,7 @@ export default function OfficeCleaningPage() {
               <a key={label} href={href} className="nav-link" style={{ fontFamily:FS }}>{label}</a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</a>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</Link>
           <MobileNav />
         </div>
       </nav>
@@ -44,8 +46,8 @@ export default function OfficeCleaningPage() {
 
             <div style={{ maxWidth:"580px" }}>
               <div style={{ display:"flex",alignItems:"center",gap:"8px",marginBottom:"28px",fontFamily:FS,fontSize:"0.8rem",color:"var(--green)",opacity:0.5 }}>
-                <a href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</a><span>/</span>
-                <a href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</a><span>/</span>
+                <Link href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</Link><span>/</span>
+                <Link href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</Link><span>/</span>
                 <span style={{ color:"var(--blue)",opacity:1 }}>Office Cleaning</span>
               </div>
               <div style={{ display:"flex",alignItems:"center",gap:"12px",marginBottom:"20px" }}>
@@ -73,17 +75,29 @@ export default function OfficeCleaningPage() {
                   <span style={{ fontFamily:FS,fontSize:"0.72rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"var(--blue)" }}>Response within 2 hours</span>
                 </div>
                 <h3 style={{ fontFamily:FD,fontSize:"1.35rem",letterSpacing:"-0.015em",color:"var(--green)",lineHeight:1.1,marginBottom:"10px" }}>Ready for an office your team is proud of?</h3>
-                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us about your space and we'll build a custom cleaning plan around your schedule. Response within 2 hours.</p>
-                <a href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
+                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us about your space and we&rsquo;ll build a custom cleaning plan around your schedule. Response within 2 hours.</p>
+                <Link href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
                   Get a Free Quote
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                </a>
+                </Link>
                 <p style={{ fontFamily:FS,fontSize:"0.7rem",color:"var(--green)",opacity:0.35,textAlign:"center",marginTop:"10px" }}>No obligation &nbsp;·&nbsp; Licensed &amp; Insured</p>
               </div>
             </div>
 
           </div>
         </section>
+
+        {/* ── Hero Photo ── */}
+        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+          <Image
+            src="/images/Vacuuming 1.webp"
+            alt="Commercial cleaner vacuuming a professional Austin office space"
+            fill
+            sizes="100vw"
+            style={{ objectFit:"cover",objectPosition:"center 25%" }}
+          />
+          <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
 
         {/* ── What We Cover ── */}
         <section style={{ background:"var(--white)",padding:"88px 24px" }}>
@@ -226,13 +240,13 @@ export default function OfficeCleaningPage() {
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>02</div>
                 <div style={{ width: "28px", height: "2px", background: "var(--blue)", marginBottom: "16px" }} />
                 <h3 style={{ fontFamily: FD, fontSize: "1.35rem", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "10px", lineHeight: 1.15 }}>Client impressions begin at the door</h3>
-                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Before a single word is spoken, your office tells clients whether you're organized and professional. Ovaro makes sure that impression is always positive.</p>
+                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Before a single word is spoken, your office tells clients whether you&rsquo;re organized and professional. Ovaro makes sure that impression is always positive.</p>
               </div>
               <div style={{ padding: "36px 40px 36px 0", paddingLeft: 2 > 0 ? "40px" : "0", borderLeft: 2 > 0 ? "1px solid var(--border)" : "none" }}>
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>03</div>
                 <div style={{ width: "28px", height: "2px", background: "var(--blue)", marginBottom: "16px" }} />
                 <h3 style={{ fontFamily: FD, fontSize: "1.35rem", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "10px", lineHeight: 1.15 }}>Consistency reduces operational stress</h3>
-                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Worrying about whether your cleaner showed up shouldn't be part of your day. We show up, do the work, and let you focus on what you do best.</p>
+                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Worrying about whether your cleaner showed up shouldn&rsquo;t be part of your day. We show up, do the work, and let you focus on what you do best.</p>
               </div>
             </div>
           </div>
@@ -305,7 +319,7 @@ export default function OfficeCleaningPage() {
                   ))}
                 </div>
                 <blockquote style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--green)", opacity: 0.8, lineHeight: 1.75, fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1 }}>
-                  &ldquo;We've had four cleaning vendors in five years. Ovaro is the first one that hasn't required follow-up calls. They simply handle it — every single time.&rdquo;
+                  &ldquo;We&rsquo;ve had four cleaning vendors in five years. Ovaro is the first one that hasn&rsquo;t required follow-up calls. They simply handle it — every single time.&rdquo;
                 </blockquote>
                 <div style={{ height: "1px", background: "var(--border)", marginBottom: "18px" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -330,7 +344,7 @@ export default function OfficeCleaningPage() {
                   ))}
                 </div>
                 <blockquote style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--green)", opacity: 0.8, lineHeight: 1.75, fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1 }}>
-                  &ldquo;Our office team noticed the difference within the first week. Cleaner than it's ever been, and the consistency hasn't wavered in over a year.&rdquo;
+                  &ldquo;Our office team noticed the difference within the first week. Cleaner than it&rsquo;s ever been, and the consistency hasn&rsquo;t wavered in over a year.&rdquo;
                 </blockquote>
                 <div style={{ height: "1px", background: "var(--border)", marginBottom: "18px" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -355,7 +369,7 @@ export default function OfficeCleaningPage() {
                   ))}
                 </div>
                 <blockquote style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--green)", opacity: 0.8, lineHeight: 1.75, fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1 }}>
-                  &ldquo;Our clients walk through our office regularly. With Ovaro, I've stopped worrying about what they'll see when they arrive.&rdquo;
+                  &ldquo;Our clients walk through our office regularly. With Ovaro, I&rsquo;ve stopped worrying about what they&rsquo;ll see when they arrive.&rdquo;
                 </blockquote>
                 <div style={{ height: "1px", background: "var(--border)", marginBottom: "18px" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -376,8 +390,8 @@ export default function OfficeCleaningPage() {
         <section style={{ background:"var(--blue)",padding:"88px 24px",textAlign:"center" }}>
           <div style={{ maxWidth:"600px",margin:"0 auto" }}>
             <h2 style={{ fontFamily:FD,fontSize:"clamp(2rem,4vw,3.25rem)",letterSpacing:"-0.022em",color:"#fff",lineHeight:1.05,marginBottom:"16px" }}>Your team deserves a clean office.</h2>
-            <p style={{ fontFamily:FS,fontSize:"1rem",color:"rgba(255,255,255,0.75)",lineHeight:1.7,marginBottom:"36px" }}>Tell us about your space and hours and we'll put together a plan that works around your operation — no obligation, response within 2 hours.</p>
-            <a href="/get-a-quote" className="btn-white">Get a Free Quote</a>
+            <p style={{ fontFamily:FS,fontSize:"1rem",color:"rgba(255,255,255,0.75)",lineHeight:1.7,marginBottom:"36px" }}>Tell us about your space and hours and we&rsquo;ll put together a plan that works around your operation — no obligation, response within 2 hours.</p>
+            <Link href="/get-a-quote" className="btn-white">Get a Free Quote</Link>
           </div>
         </section>
 

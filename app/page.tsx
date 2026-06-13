@@ -1,12 +1,15 @@
+import Link from "next/link";
 /* Ovaro Commercial — Home Page
    Section order (per CLAUDE.md): Hero → Trust signals → Services → How it works → Testimonials → CTA band
    Primary goal: quote form submissions */
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import { NavDropdown } from "./components/NavDropdown";
 import { FacilitiesDropdown } from "./components/FacilitiesDropdown";
 import { MobileNav } from "./components/MobileNav";
 import { LogoBubble } from "./components/LogoBubble";
+import { LocalBusinessSchema } from "./components/LocalBusinessSchema";
 
 export const metadata: Metadata = {
   title: "Ovaro Commercial | Commercial Cleaning Austin TX",
@@ -134,6 +137,7 @@ const testimonials = [
 export default function Home() {
   return (
     <>
+      <LocalBusinessSchema />
       {/* ── Navigation ──────────────────────────── */}
       <nav
         style={{
@@ -181,9 +185,9 @@ export default function Home() {
           </div>
 
           {/* CTA */}
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
             Get a Quote
-          </a>
+          </Link>
           <MobileNav />
         </div>
       </nav>
@@ -228,7 +232,7 @@ export default function Home() {
             </div>
 
             {/* Left text + circle: flex row centered on the full text block */}
-            <div style={{ display: "flex", alignItems: "center", gap: "56px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "56px", flexWrap: "wrap" }}>
 
               {/* Left column — all text */}
               <div style={{ flex: 1, minWidth: 0 }}>
@@ -265,12 +269,12 @@ export default function Home() {
 
                 {/* CTAs */}
                 <div className="e4" style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "40px" }}>
-                  <a href="/get-a-quote" className="btn-primary">
+                  <Link href="/get-a-quote" className="btn-primary">
                     Get a Free Quote{" "}
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M3 8h10M9 4l4 4-4 4" />
                     </svg>
-                  </a>
+                  </Link>
                   <a href="#services" className="btn-ghost">Our Services</a>
                 </div>
 
@@ -285,142 +289,31 @@ export default function Home() {
 
               </div>{/* end left column */}
 
-              {/* Credential circle — right, centered with full text block */}
+              {/* Hero photo — right (stacks below text on mobile/tablet) */}
               <div
-                className="e2 float hidden lg:flex"
-                style={{ alignItems: "center", justifyContent: "center", flexShrink: 0, width: "420px" }}
+                className="e2 float hero-photo"
+                style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, width: "460px" }}
               >
-              <div style={{ position: "relative", width: "320px", height: "320px" }}>
-                {/* Outer ring */}
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    borderRadius: "50%",
-                    border: "1px solid var(--border-blue)",
-                    background: "var(--blue-subtle)",
-                  }}
-                />
-                {/* Inner ring */}
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: "24px",
-                    borderRadius: "50%",
-                    border: "1px solid rgba(105,150,173,0.12)",
-                  }}
-                />
-
-                {/* Center content */}
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: FD,
-                      fontSize: "6rem",
-                      lineHeight: 1,
-                      color: "var(--blue)",
-                      letterSpacing: "-0.04em",
-                    }}
-                  >
-                    9
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: FS,
-                      fontSize: "0.65rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.2em",
-                      textTransform: "uppercase",
-                      color: "var(--green)",
-                      opacity: 0.45,
-                      marginTop: "4px",
-                    }}
-                  >
-                    YEARS
-                  </span>
-                  <div
-                    style={{
-                      width: "28px",
-                      height: "1px",
-                      background: "var(--border-blue)",
-                      margin: "10px 0",
-                    }}
+                <div className="hero-photo-inner" style={{ position: "relative", width: "420px", height: "520px", borderRadius: "14px", overflow: "hidden", boxShadow: "0 24px 72px rgba(27,61,47,0.16), 0 4px 16px rgba(27,61,47,0.08)" }}>
+                  <Image
+                    src="/images/Team Portrait 1.webp"
+                    alt="The Ovaro Commercial team — friendly, professional cleaners serving Austin businesses"
+                    fill
+                    priority
+                    sizes="(max-width: 1023px) 480px, 420px"
+                    style={{ objectFit: "cover", objectPosition: "center 30%" }}
                   />
-                  <span
-                    style={{
-                      fontFamily: FS,
-                      fontSize: "0.75rem",
-                      color: "var(--green)",
-                      opacity: 0.5,
-                      textAlign: "center",
-                      lineHeight: 1.5,
-                    }}
-                  >
-                    Serving Austin&rsquo;s
-                    <br />
-                    finest businesses
-                  </span>
-                </div>
-
-                {/*
-                  8 industry tags, one per 45° around the 320 px circle.
-                  Geometry: cx = 160 + 160·sin(θ),  cy = 160 − 160·cos(θ)
-                  Right tags  → left  = cx / 320 × 100 %   (inner edge on circle)
-                  Left  tags  → right = (320−cx) / 320 × 100 % (inner edge on circle)
-                  Top/bottom  → ±8 % (≈ tag height 26 px / 320)
-                  Vertical    → top  = (cy − 13) / 320 × 100 %
-                */}
-                {(
-                  [
-                    // 0 °  — 12 o'clock  (cx=160, cy=0)
-                    { label: "Hotels",                  top: "-8%",    left: "50%",   transform: "translateX(-50%)" },
-                    // 45 ° — 1:30        (cx=273, cy=47)  left=85 %, top=10 %
-                    { label: "Financial Institutions",  top: "10%",    left: "85%"  },
-                    // 90 ° — 3 o'clock   (cx=320, cy=160) left=97 %, top=46 %
-                    { label: "Educational Facilities",  top: "46%",    left: "97%"  },
-                    // 135°  — 4:30       (cx=273, cy=273) left=85 %, bottom=10 %
-                    { label: "Construction Sites",      bottom: "10%", left: "85%"  },
-                    // 180°  — 6 o'clock  (cx=160, cy=320)
-                    { label: "Fitness Centers",         bottom: "-8%", left: "50%",  transform: "translateX(-50%)" },
-                    // 225°  — 7:30       (cx=47, cy=273)  right=85 %, bottom=10 %
-                    { label: "Retail Locations",        bottom: "10%", right: "85%" },
-                    // 270°  — 9 o'clock  (cx=0, cy=160)   right=97 %, top=46 %
-                    { label: "Places of Prayer",        top: "46%",    right: "97%" },
-                    // 315°  — 10:30      (cx=47, cy=47)   right=85 %, top=10 %
-                    { label: "Office Spaces",           top: "10%",    right: "85%" },
-                  ] as Array<{ label: string; top?: string; bottom?: string; left?: string; right?: string; transform?: string }>
-                ).map(({ label, ...pos }) => (
-                  <div key={label} style={{ position: "absolute", ...pos }}>
-                    <span
-                      style={{
-                        fontFamily: FS,
-                        fontSize: "0.67rem",
-                        fontWeight: 600,
-                        padding: "5px 11px",
-                        borderRadius: "20px",
-                        border: "1px solid var(--border-blue)",
-                        background: "var(--white)",
-                        color: "var(--blue)",
-                        whiteSpace: "nowrap",
-                        display: "block",
-                        boxShadow: "0 1px 5px rgba(27,61,47,0.08)",
-                      }}
-                    >
-                      {label}
-                    </span>
+                  {/* Glass badge overlay */}
+                  <div style={{ position: "absolute", bottom: "20px", left: "20px", right: "20px", background: "rgba(255,255,255,0.92)", borderRadius: "10px", padding: "14px 18px", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.6)" }}>
+                    <div style={{ fontFamily: FS, fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--blue)", marginBottom: "3px" }}>
+                      9 Years Serving Austin Businesses
+                    </div>
+                    <div style={{ fontFamily: FS, fontSize: "0.78rem", color: "var(--green)", opacity: 0.65 }}>
+                      Licensed · Bonded · Family-Owned Since 2017
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>{/* end circle wrapper */}
+                </div>
+              </div>{/* end photo wrapper */}
             </div>{/* end left+circle flex row */}
 
           </div>{/* end outer content div */}
@@ -634,7 +527,7 @@ export default function Home() {
                 paddingTop: "48px",
               }}
             >
-              <a
+              <Link
                 href="/facilities-served"
                 className="btn-ghost"
                 style={{ gap: "8px", paddingLeft: "36px", paddingRight: "36px" }}
@@ -643,7 +536,7 @@ export default function Home() {
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 8h10M9 4l4 4-4 4" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -792,6 +685,99 @@ export default function Home() {
                 </Wrapper>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* ── About / Our Story ───────────────────── */}
+        <section
+          id="about"
+          style={{
+            background: "var(--green)",
+            padding: "112px 0",
+            borderTop: "1px solid var(--border)",
+            scrollMarginTop: "68px",
+          }}
+        >
+          <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
+            <div
+              className="about-grid"
+              style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }}
+            >
+
+              {/* Photo */}
+              <div
+                className="about-photo"
+                style={{ position: "relative", width: "100%", height: "520px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 24px 72px rgba(0,0,0,0.28)" }}
+              >
+                <Image
+                  src="/images/Janitorial 9.jpg"
+                  alt="The Ovaro Commercial team at work in an Austin office"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 600px"
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                />
+              </div>
+
+              {/* Story */}
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px" }}>
+                  <div style={{ width: "32px", height: "1.5px", background: "var(--blue)" }} />
+                  <span style={{ fontFamily: FS, fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--blue)" }}>
+                    Our Story
+                  </span>
+                </div>
+
+                <h2 style={{ fontFamily: FD, fontSize: "clamp(2.2rem, 4vw, 3.5rem)", letterSpacing: "-0.025em", color: "var(--cream)", lineHeight: 1.0, marginBottom: "28px" }}>
+                  Family-owned.<br />
+                  <span style={{ color: "var(--blue)" }}>Personally accountable.</span>
+                </h2>
+
+                <p style={{ fontFamily: FS, fontSize: "1.05rem", color: "var(--cream)", opacity: 0.78, lineHeight: 1.8, marginBottom: "20px" }}>
+                  We started Ovaro in 2017 after hearing the same complaints from
+                  Austin office managers and financial institutions, over and over:
+                  corporate cleaning companies that under-delivered, went silent when
+                  something went wrong, and treated their buildings like a number on
+                  a route sheet.
+                </p>
+                <p style={{ fontFamily: FS, fontSize: "1.05rem", color: "var(--cream)", opacity: 0.78, lineHeight: 1.8, marginBottom: "36px" }}>
+                  So we built the opposite. Nine years later, we&rsquo;re still
+                  family-owned and operated — with consistent crews, clear standards,
+                  and a direct line to the people who own the business. When you call
+                  Ovaro, you reach someone who actually cares whether the job was done
+                  right.
+                </p>
+
+                {/* Value points */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "40px" }}>
+                  {[
+                    { title: "Consistency you can set a clock by", body: "The same trained crew, the same standard, every single visit." },
+                    { title: "Communication that doesn't go dark", body: "A direct line to ownership — not a call center or a ticket queue." },
+                    { title: "Accountability for the details", body: "Clear checklists and follow-through, so nothing gets skipped." },
+                  ].map((v) => (
+                    <div key={v.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                      <span style={{ flexShrink: 0, marginTop: "2px", color: "var(--blue)" }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10" />
+                          <polyline points="8 12 11 15 16 9" />
+                        </svg>
+                      </span>
+                      <div>
+                        <div style={{ fontFamily: FS, fontSize: "0.95rem", fontWeight: 600, color: "var(--cream)", marginBottom: "2px" }}>{v.title}</div>
+                        <div style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--cream)", opacity: 0.6, lineHeight: 1.6 }}>{v.body}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <Link href="/get-a-quote" className="btn-white">
+                  Get a Free Quote{" "}
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </Link>
+              </div>
+
             </div>
           </div>
         </section>
@@ -1004,9 +990,9 @@ export default function Home() {
                   backdropFilter: "blur(4px)",
                 }}
               />
-              <a href="#" className="btn-white">
+              <Link href="/get-a-quote" className="btn-white">
                 Get a Free Quote
-              </a>
+              </Link>
             </div>
 
             {/* Promise */}
@@ -1149,10 +1135,10 @@ export default function Home() {
                 <span>Georgetown · Leander · Round Rock</span>
                 <span>Pflugerville · Bee Cave · Lakeway</span>
                 <a
-                  href="mailto:hello@ovarocommercial.com"
+                  href="mailto:terrell@ovarocommercial.com"
                   style={{ color: "var(--blue)", textDecoration: "none" }}
                 >
-                  hello@ovarocommercial.com
+                  terrell@ovarocommercial.com
                 </a>
                 <span
                   style={{

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useState, useRef } from "react";
 
@@ -73,7 +74,7 @@ export function NavDropdown({ active }: { active: string }) {
       onMouseLeave={handleLeave}
     >
       {/* Trigger */}
-      <a
+      <Link
         href="/services"
         style={{
           display: "inline-flex",
@@ -100,7 +101,7 @@ export function NavDropdown({ active }: { active: string }) {
         >
           <path d="M1 1l4 4 4-4" />
         </svg>
-      </a>
+      </Link>
 
       {/* Dropdown panel */}
       <div

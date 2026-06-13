@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { NavDropdown } from "../../components/NavDropdown";
 import { FacilitiesDropdown } from "../../components/FacilitiesDropdown";
@@ -7,7 +9,7 @@ import { LogoBubble } from "../../components/LogoBubble";
 
 export const metadata: Metadata = {
   title: "Places of Prayer | Ovaro Commercial",
-  description: "Professional places of prayer cleaning in Austin, TX. Family-owned since 2017. Consistent, reliable service — get a free quote and we respond within 2 hours.",
+  description: "Cleaning for churches, mosques, temples, and places of worship in Austin, TX. Respectful, thorough care for sanctuaries and gathering spaces. Family-owned since 2017 — free quote in 2 hours.",
 };
 
 const FD = "var(--font-display)";
@@ -31,7 +33,7 @@ export default function PlacesOfPrayerPage() {
               <a key={label} href={href} className="nav-link" style={{ fontFamily:FS }}>{label}</a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</a>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</Link>
           <MobileNav />
         </div>
       </nav>
@@ -44,8 +46,8 @@ export default function PlacesOfPrayerPage() {
 
             <div style={{ maxWidth:"580px" }}>
               <div style={{ display:"flex",alignItems:"center",gap:"8px",marginBottom:"28px",fontFamily:FS,fontSize:"0.8rem",color:"var(--green)",opacity:0.5 }}>
-                <a href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</a><span>/</span>
-                <a href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</a><span>/</span>
+                <Link href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</Link><span>/</span>
+                <Link href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</Link><span>/</span>
                 <span style={{ color:"var(--blue)",opacity:1 }}>Places of Prayer</span>
               </div>
               <div style={{ display:"flex",alignItems:"center",gap:"12px",marginBottom:"20px" }}>
@@ -72,18 +74,30 @@ export default function PlacesOfPrayerPage() {
                   </div>
                   <span style={{ fontFamily:FS,fontSize:"0.72rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"var(--blue)" }}>Response within 2 hours</span>
                 </div>
-                <h3 style={{ fontFamily:FD,fontSize:"1.35rem",letterSpacing:"-0.015em",color:"var(--green)",lineHeight:1.1,marginBottom:"10px" }}>Ready to care for your congregation's space?</h3>
-                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us about your facility and schedule. We'll build a cleaning plan that works around your services and events — response within 2 hours.</p>
-                <a href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
+                <h3 style={{ fontFamily:FD,fontSize:"1.35rem",letterSpacing:"-0.015em",color:"var(--green)",lineHeight:1.1,marginBottom:"10px" }}>Ready to care for your congregation&rsquo;s space?</h3>
+                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us about your facility and schedule. We&rsquo;ll build a cleaning plan that works around your services and events — response within 2 hours.</p>
+                <Link href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
                   Get a Free Quote
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                </a>
+                </Link>
                 <p style={{ fontFamily:FS,fontSize:"0.7rem",color:"var(--green)",opacity:0.35,textAlign:"center",marginTop:"10px" }}>No obligation &nbsp;·&nbsp; Licensed &amp; Insured</p>
               </div>
             </div>
 
           </div>
         </section>
+
+        {/* ── Hero Photo ── */}
+        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+          <Image
+            src="/images/Janitorial 5.webp"
+            alt="Clean, well-maintained corridor in an Austin place of worship"
+            fill
+            sizes="100vw"
+            style={{ objectFit:"cover",objectPosition:"center 40%" }}
+          />
+          <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
 
         {/* ── What We Cover ── */}
         <section style={{ background:"var(--white)",padding:"88px 24px" }}>
@@ -122,15 +136,15 @@ export default function PlacesOfPrayerPage() {
                     Multi-purpose halls cleaned and reset after events — tables, chairs, floors, and surfaces addressed so every use starts fresh.
                   </p>
                 </div>
-                <div key="Nursery & Children's Area Sanitization" className="area-card">
+                <div key="Nursery & Children&rsquo;s Area Sanitization" className="area-card">
                   <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "14px" }}>
                     <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "var(--blue-subtle)", border: "1px solid var(--border-blue)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--blue)", flexShrink: 0 }}>
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
-                    <h3 style={{ fontFamily: FD, fontSize: "1.1rem", letterSpacing: "-0.01em", color: "var(--green)", margin: 0 }}>Nursery & Children's Area Sanitization</h3>
+                    <h3 style={{ fontFamily: FD, fontSize: "1.1rem", letterSpacing: "-0.01em", color: "var(--green)", margin: 0 }}>Nursery & Children&rsquo;s Area Sanitization</h3>
                   </div>
                   <p style={{ fontFamily: FS, fontSize: "0.85rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.7, margin: 0 }}>
-                    Children's areas cleaned with low-toxicity, family-safe products — high-touch surfaces disinfected to the standard young families deserve.
+                    Children&rsquo;s areas cleaned with low-toxicity, family-safe products — high-touch surfaces disinfected to the standard young families deserve.
                   </p>
                 </div>
                 <div key="Restroom Cleaning & Restocking" className="area-card">
@@ -163,7 +177,7 @@ export default function PlacesOfPrayerPage() {
                     <h3 style={{ fontFamily: FD, fontSize: "1.1rem", letterSpacing: "-0.01em", color: "var(--green)", margin: 0 }}>Entrance & Lobby Upkeep</h3>
                   </div>
                   <p style={{ fontFamily: FS, fontSize: "0.85rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.7, margin: 0 }}>
-                    Entry areas, foyers, and lobby spaces maintained so every visitor's first impression reflects the care and welcome your community extends.
+                    Entry areas, foyers, and lobby spaces maintained so every visitor&rsquo;s first impression reflects the care and welcome your community extends.
                   </p>
                 </div>
                 <div key="Office & Administrative Spaces" className="area-card">
@@ -220,13 +234,13 @@ export default function PlacesOfPrayerPage() {
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>01</div>
                 <div style={{ width: "28px", height: "2px", background: "var(--blue)", marginBottom: "16px" }} />
                 <h3 style={{ fontFamily: FD, fontSize: "1.35rem", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "10px", lineHeight: 1.15 }}>Your congregation trusts your stewardship</h3>
-                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>The people who gather in your space trust that it's being cared for. A consistently clean facility is an expression of that care — and Ovaro helps you deliver it.</p>
+                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>The people who gather in your space trust that it&rsquo;s being cared for. A consistently clean facility is an expression of that care — and Ovaro helps you deliver it.</p>
               </div>
               <div style={{ padding: "36px 40px 36px 0", paddingLeft: 1 > 0 ? "40px" : "0", borderLeft: 1 > 0 ? "1px solid var(--border)" : "none" }}>
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>02</div>
                 <div style={{ width: "28px", height: "2px", background: "var(--blue)", marginBottom: "16px" }} />
-                <h3 style={{ fontFamily: FD, fontSize: "1.35rem", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "10px", lineHeight: 1.15 }}>Children's areas have the highest standards</h3>
-                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Families bring their children to your facility trusting their safety. Our cleaning protocols for nurseries and children's areas reflect that responsibility.</p>
+                <h3 style={{ fontFamily: FD, fontSize: "1.35rem", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "10px", lineHeight: 1.15 }}>Children&rsquo;s areas have the highest standards</h3>
+                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Families bring their children to your facility trusting their safety. Our cleaning protocols for nurseries and children&rsquo;s areas reflect that responsibility.</p>
               </div>
               <div style={{ padding: "36px 40px 36px 0", paddingLeft: 2 > 0 ? "40px" : "0", borderLeft: 2 > 0 ? "1px solid var(--border)" : "none" }}>
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>03</div>
@@ -305,7 +319,7 @@ export default function PlacesOfPrayerPage() {
                   ))}
                 </div>
                 <blockquote style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--green)", opacity: 0.8, lineHeight: 1.75, fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1 }}>
-                  &ldquo;Ovaro has cleaned our church for two years. They're professional, respectful of the space, and have never once interfered with a service or event.&rdquo;
+                  &ldquo;Ovaro has cleaned our church for two years. They&rsquo;re professional, respectful of the space, and have never once interfered with a service or event.&rdquo;
                 </blockquote>
                 <div style={{ height: "1px", background: "var(--border)", marginBottom: "18px" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -377,7 +391,7 @@ export default function PlacesOfPrayerPage() {
           <div style={{ maxWidth:"600px",margin:"0 auto" }}>
             <h2 style={{ fontFamily:FD,fontSize:"clamp(2rem,4vw,3.25rem)",letterSpacing:"-0.022em",color:"#fff",lineHeight:1.05,marginBottom:"16px" }}>Your space deserves the same care your community gives it.</h2>
             <p style={{ fontFamily:FS,fontSize:"1rem",color:"rgba(255,255,255,0.75)",lineHeight:1.7,marginBottom:"36px" }}>Ovaro brings the same respect and attention to your facility that your congregation brings to it. Consistent, professional, and always scheduled around you.</p>
-            <a href="/get-a-quote" className="btn-white">Get a Free Quote</a>
+            <Link href="/get-a-quote" className="btn-white">Get a Free Quote</Link>
           </div>
         </section>
 

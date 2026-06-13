@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { NavDropdown } from "../../components/NavDropdown";
 import { FacilitiesDropdown } from "../../components/FacilitiesDropdown";
 import { Footer } from "../../components/Footer";
@@ -188,9 +190,9 @@ export default function DeepCleaningPage() {
               </a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding: "10px 22px", fontSize: "0.875rem" }}>
             Get a Quote
-          </a>
+          </Link>
           <MobileNav />
         </div>
       </nav>
@@ -205,9 +207,9 @@ export default function DeepCleaningPage() {
 
               {/* Breadcrumb */}
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "28px", fontFamily: FS, fontSize: "0.8rem", color: "var(--green)", opacity: 0.5 }}>
-                <a href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</a>
+                <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>Home</Link>
                 <span>/</span>
-                <a href="/services" style={{ textDecoration: "none", color: "inherit" }}>Services</a>
+                <Link href="/services" style={{ textDecoration: "none", color: "inherit" }}>Services</Link>
                 <span>/</span>
                 <span style={{ color: "var(--blue)", opacity: 1 }}>Deep Cleaning</span>
               </div>
@@ -286,6 +288,18 @@ export default function DeepCleaningPage() {
 
           </div>
         </section>
+
+        {/* ── Hero Photo ── */}
+        <div style={{ position: "relative", height: "420px", overflow: "hidden" }}>
+          <Image
+            src="/images/Janitorial 10.webp"
+            alt="Commercial cleaner performing detailed deep cleaning in an Austin facility"
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover", objectPosition: "center 20%" }}
+          />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
 
         {/* ── The Reality Section ── */}
         <section style={{ background: "var(--white)", padding: "96px 24px", borderBottom: "1px solid var(--border)" }}>
@@ -435,7 +449,7 @@ export default function DeepCleaningPage() {
             <p style={{ fontFamily: FS, fontSize: "1rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "36px" }}>
               Tell us about your facility and we&rsquo;ll build a deep clean scope around it — every area, every surface, on your schedule. Response within 2 hours, no obligation.
             </p>
-            <a href="/get-a-quote" className="btn-white">Get a Free Quote</a>
+            <Link href="/get-a-quote" className="btn-white">Get a Free Quote</Link>
           </div>
         </section>
 

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { NavDropdown } from "../../components/NavDropdown";
 import { FacilitiesDropdown } from "../../components/FacilitiesDropdown";
 import { Footer } from "../../components/Footer";
@@ -7,7 +9,7 @@ import { LogoBubble } from "../../components/LogoBubble";
 
 export const metadata: Metadata = {
   title: "Financial Institutions | Ovaro Commercial",
-  description: "Professional financial institutions cleaning in Austin, TX. Family-owned since 2017. Consistent, reliable service — get a free quote and we respond within 2 hours.",
+  description: "Commercial cleaning for banks and credit unions in Austin, TX. Discreet, detail-oriented service that meets the standard financial institutions require. Family-owned since 2017 — free quote in 2 hours.",
 };
 
 const FD = "var(--font-display)";
@@ -31,7 +33,7 @@ export default function FinancialInstitutionsPage() {
               <a key={label} href={href} className="nav-link" style={{ fontFamily:FS }}>{label}</a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</a>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</Link>
           <MobileNav />
         </div>
       </nav>
@@ -44,8 +46,8 @@ export default function FinancialInstitutionsPage() {
 
             <div style={{ maxWidth:"580px" }}>
               <div style={{ display:"flex",alignItems:"center",gap:"8px",marginBottom:"28px",fontFamily:FS,fontSize:"0.8rem",color:"var(--green)",opacity:0.5 }}>
-                <a href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</a><span>/</span>
-                <a href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</a><span>/</span>
+                <Link href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</Link><span>/</span>
+                <Link href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</Link><span>/</span>
                 <span style={{ color:"var(--blue)",opacity:1 }}>Financial Institutions</span>
               </div>
               <div style={{ display:"flex",alignItems:"center",gap:"12px",marginBottom:"20px" }}>
@@ -73,17 +75,29 @@ export default function FinancialInstitutionsPage() {
                   <span style={{ fontFamily:FS,fontSize:"0.72rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"var(--blue)" }}>Response within 2 hours</span>
                 </div>
                 <h3 style={{ fontFamily:FD,fontSize:"1.35rem",letterSpacing:"-0.015em",color:"var(--green)",lineHeight:1.1,marginBottom:"10px" }}>Ready for a cleaner branch?</h3>
-                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us about your location and schedule. We'll build a cleaning plan that meets your standards — response within 2 hours.</p>
-                <a href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
+                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us about your location and schedule. We&rsquo;ll build a cleaning plan that meets your standards — response within 2 hours.</p>
+                <Link href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
                   Get a Free Quote
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                </a>
+                </Link>
                 <p style={{ fontFamily:FS,fontSize:"0.7rem",color:"var(--green)",opacity:0.35,textAlign:"center",marginTop:"10px" }}>No obligation &nbsp;·&nbsp; Licensed &amp; Insured</p>
               </div>
             </div>
 
           </div>
         </section>
+
+        {/* ── Hero Photo ── */}
+        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+          <Image
+            src="/images/Commercial Floor Waxing 1.jpg"
+            alt="Commercial floor waxing service in an Austin financial institution"
+            fill
+            sizes="100vw"
+            style={{ objectFit:"cover",objectPosition:"center 40%" }}
+          />
+          <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
 
         {/* ── What We Cover ── */}
         <section style={{ background:"var(--white)",padding:"88px 24px" }}>
@@ -232,7 +246,7 @@ export default function FinancialInstitutionsPage() {
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>03</div>
                 <div style={{ width: "28px", height: "2px", background: "var(--blue)", marginBottom: "16px" }} />
                 <h3 style={{ fontFamily: FD, fontSize: "1.35rem", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "10px", lineHeight: 1.15 }}>Accountability that matches your standards</h3>
-                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Financial institutions expect vendors who show up, communicate, and perform without supervision. That's exactly how Ovaro operates.</p>
+                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>Financial institutions expect vendors who show up, communicate, and perform without supervision. That&rsquo;s exactly how Ovaro operates.</p>
               </div>
             </div>
           </div>
@@ -305,7 +319,7 @@ export default function FinancialInstitutionsPage() {
                   ))}
                 </div>
                 <blockquote style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--green)", opacity: 0.8, lineHeight: 1.75, fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1 }}>
-                  &ldquo;I've worked with four cleaning vendors at two different branches. Ovaro is the only one I've never had to follow up with. They just handle it.&rdquo;
+                  &ldquo;I&rsquo;ve worked with four cleaning vendors at two different branches. Ovaro is the only one I&rsquo;ve never had to follow up with. They just handle it.&rdquo;
                 </blockquote>
                 <div style={{ height: "1px", background: "var(--border)", marginBottom: "18px" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -330,7 +344,7 @@ export default function FinancialInstitutionsPage() {
                   ))}
                 </div>
                 <blockquote style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--green)", opacity: 0.8, lineHeight: 1.75, fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1 }}>
-                  &ldquo;Our branch lobbies are client-facing all day. Ovaro keeps them at a standard I'm proud of — and they've never missed a scheduled visit.&rdquo;
+                  &ldquo;Our branch lobbies are client-facing all day. Ovaro keeps them at a standard I&rsquo;m proud of — and they&rsquo;ve never missed a scheduled visit.&rdquo;
                 </blockquote>
                 <div style={{ height: "1px", background: "var(--border)", marginBottom: "18px" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -355,7 +369,7 @@ export default function FinancialInstitutionsPage() {
                   ))}
                 </div>
                 <blockquote style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--green)", opacity: 0.8, lineHeight: 1.75, fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1 }}>
-                  &ldquo;The professionalism of the team matches what we need in a financial institution. They're discreet, consistent, and thorough.&rdquo;
+                  &ldquo;The professionalism of the team matches what we need in a financial institution. They&rsquo;re discreet, consistent, and thorough.&rdquo;
                 </blockquote>
                 <div style={{ height: "1px", background: "var(--border)", marginBottom: "18px" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -377,7 +391,7 @@ export default function FinancialInstitutionsPage() {
           <div style={{ maxWidth:"600px",margin:"0 auto" }}>
             <h2 style={{ fontFamily:FD,fontSize:"clamp(2rem,4vw,3.25rem)",letterSpacing:"-0.022em",color:"#fff",lineHeight:1.05,marginBottom:"16px" }}>Your lobby reflects your institution.</h2>
             <p style={{ fontFamily:FS,fontSize:"1rem",color:"rgba(255,255,255,0.75)",lineHeight:1.7,marginBottom:"36px" }}>A clean, professional environment communicates trust before a single transaction. Let Ovaro maintain that standard every day.</p>
-            <a href="/get-a-quote" className="btn-white">Get a Free Quote</a>
+            <Link href="/get-a-quote" className="btn-white">Get a Free Quote</Link>
           </div>
         </section>
 

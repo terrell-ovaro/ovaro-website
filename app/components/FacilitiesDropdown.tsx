@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useState, useRef } from "react";
 
@@ -66,7 +67,7 @@ export function FacilitiesDropdown({ active }: { active: string }) {
 
   return (
     <div style={{ position: "relative" }} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
-      <a
+      <Link
         href="/facilities-served"
         style={{
           display: "inline-flex", alignItems: "center", gap: "4px",
@@ -82,7 +83,7 @@ export function FacilitiesDropdown({ active }: { active: string }) {
           style={{ transition: "transform 0.22s ease", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}>
           <path d="M1 1l4 4 4-4" />
         </svg>
-      </a>
+      </Link>
 
       <div style={{
         position: "absolute",

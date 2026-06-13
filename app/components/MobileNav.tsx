@@ -1,6 +1,7 @@
 "use client";
+import Link from "next/link";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 
 const FS = "var(--font-sans, 'DM Sans', sans-serif)";
@@ -97,10 +98,6 @@ function Accordion({
 
 export function MobileNav() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  // Only render portal after client mount
-  useEffect(() => { setMounted(true); }, []);
 
   const close = () => setDrawerOpen(false);
 
@@ -140,7 +137,7 @@ export function MobileNav() {
       ))}
 
       <div style={{ paddingTop: "24px" }}>
-        <a
+        <Link
           href="/get-a-quote" onClick={close}
           style={{
             display: "flex", justifyContent: "center", alignItems: "center",
@@ -151,7 +148,7 @@ export function MobileNav() {
           }}
         >
           Get a Free Quote →
-        </a>
+        </Link>
       </div>
 
       <div style={{ marginTop: "28px", textAlign: "center", borderTop: "1px solid rgba(27,61,47,0.08)", paddingTop: "20px" }}>
@@ -194,7 +191,7 @@ export function MobileNav() {
       </button>
 
       {/* Drawer — portaled to document.body to escape the nav's backdrop-filter containing block */}
-      {mounted && drawerOpen && createPortal(drawer, document.body)}
+      {drawerOpen && typeof document !== "undefined" && createPortal(drawer, document.body)}
     </div>
   );
 }

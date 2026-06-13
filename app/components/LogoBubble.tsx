@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -16,7 +17,7 @@ export function LogoBubble() {
   };
 
   return (
-    <a
+    <Link
       href="/"
       className="logo-bubble"
       onMouseEnter={handleMouseEnter}
@@ -71,6 +72,6 @@ export function LogoBubble() {
           }}
         />
       )}
-    </a>
+    </Link>
   );
 }

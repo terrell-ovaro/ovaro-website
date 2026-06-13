@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { NavDropdown } from "../../components/NavDropdown";
 import { FacilitiesDropdown } from "../../components/FacilitiesDropdown";
@@ -7,7 +9,7 @@ import { LogoBubble } from "../../components/LogoBubble";
 
 export const metadata: Metadata = {
   title: "Construction Sites | Ovaro Commercial",
-  description: "Professional construction sites cleaning in Austin, TX. Family-owned since 2017. Consistent, reliable service — get a free quote and we respond within 2 hours.",
+  description: "Construction site and post-build cleaning in Austin, TX. We clear dust, debris, and residue so your finished space is move-in ready on schedule. Family-owned since 2017 — free quote in 2 hours.",
 };
 
 const FD = "var(--font-display)";
@@ -31,7 +33,7 @@ export default function ConstructionSitesPage() {
               <a key={label} href={href} className="nav-link" style={{ fontFamily:FS }}>{label}</a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</a>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem" }}>Get a Quote</Link>
           <MobileNav />
         </div>
       </nav>
@@ -44,8 +46,8 @@ export default function ConstructionSitesPage() {
 
             <div style={{ maxWidth:"580px" }}>
               <div style={{ display:"flex",alignItems:"center",gap:"8px",marginBottom:"28px",fontFamily:FS,fontSize:"0.8rem",color:"var(--green)",opacity:0.5 }}>
-                <a href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</a><span>/</span>
-                <a href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</a><span>/</span>
+                <Link href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</Link><span>/</span>
+                <Link href="/facilities-served" style={{ textDecoration:"none",color:"inherit" }}>Facilities Served</Link><span>/</span>
                 <span style={{ color:"var(--blue)",opacity:1 }}>Construction Sites</span>
               </div>
               <div style={{ display:"flex",alignItems:"center",gap:"12px",marginBottom:"20px" }}>
@@ -56,7 +58,7 @@ export default function ConstructionSitesPage() {
                 Done Building.<br /><span style={{ color:"var(--blue)" }}>Time to Clean.</span>
               </h1>
               <p style={{ fontFamily:FS,fontSize:"1.05rem",color:"var(--green)",opacity:0.65,lineHeight:1.75,margin:0 }}>
-                Construction ends — but the job isn't done until the space is genuinely ready for handover. Ovaro handles post-construction cleanup from rough debris removal through final inspection-ready polish, so you hit your deadline.
+                Construction ends — but the job isn&rsquo;t done until the space is genuinely ready for handover. Ovaro handles post-construction cleanup from rough debris removal through final inspection-ready polish, so you hit your deadline.
               </p>
               <div style={{ display:"flex",flexWrap:"nowrap",gap:"8px",marginTop:"28px" }}>
                 <span key="Post-Construction" style={{ fontFamily: FS, fontSize: "0.72rem", fontWeight: 600, padding: "5px 11px", borderRadius: "20px", border: "1px solid var(--border-blue)", background: "var(--blue-subtle)", color: "var(--blue)", whiteSpace: "nowrap" }}>Post-Construction</span><span key="Deadline Driven" style={{ fontFamily: FS, fontSize: "0.72rem", fontWeight: 600, padding: "5px 11px", borderRadius: "20px", border: "1px solid var(--border-blue)", background: "var(--blue-subtle)", color: "var(--blue)", whiteSpace: "nowrap" }}>Deadline Driven</span><span key="Inspection Ready" style={{ fontFamily: FS, fontSize: "0.72rem", fontWeight: 600, padding: "5px 11px", borderRadius: "20px", border: "1px solid var(--border-blue)", background: "var(--blue-subtle)", color: "var(--blue)", whiteSpace: "nowrap" }}>Inspection Ready</span>
@@ -73,17 +75,29 @@ export default function ConstructionSitesPage() {
                   <span style={{ fontFamily:FS,fontSize:"0.72rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"var(--blue)" }}>Response within 2 hours</span>
                 </div>
                 <h3 style={{ fontFamily:FD,fontSize:"1.35rem",letterSpacing:"-0.015em",color:"var(--green)",lineHeight:1.1,marginBottom:"10px" }}>Ready to hand over on time?</h3>
-                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us your project scope, square footage, and target handover date. We'll build a cleanup plan around it — response within 2 hours.</p>
-                <a href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
+                <p style={{ fontFamily:FS,fontSize:"0.82rem",color:"var(--green)",opacity:0.6,lineHeight:1.7,marginBottom:"20px" }}>Tell us your project scope, square footage, and target handover date. We&rsquo;ll build a cleanup plan around it — response within 2 hours.</p>
+                <Link href="/get-a-quote" className="btn-primary" style={{ width:"100%",justifyContent:"center",fontSize:"0.85rem",padding:"13px 20px" }}>
                   Get a Free Quote
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                </a>
+                </Link>
                 <p style={{ fontFamily:FS,fontSize:"0.7rem",color:"var(--green)",opacity:0.35,textAlign:"center",marginTop:"10px" }}>No obligation &nbsp;·&nbsp; Licensed &amp; Insured</p>
               </div>
             </div>
 
           </div>
         </section>
+
+        {/* ── Hero Photo ── */}
+        <div style={{ position:"relative",height:"420px",overflow:"hidden" }}>
+          <Image
+            src="/images/Janitorial 1.jpg"
+            alt="Post-construction floor cleaning in an Austin commercial building"
+            fill
+            sizes="100vw"
+            style={{ objectFit:"cover",objectPosition:"center 35%" }}
+          />
+          <div style={{ position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(27,61,47,0.03), rgba(27,61,47,0.10))" }} />
+        </div>
 
         {/* ── What We Cover ── */}
         <section style={{ background:"var(--white)",padding:"88px 24px" }}>
@@ -226,7 +240,7 @@ export default function ConstructionSitesPage() {
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>02</div>
                 <div style={{ width: "28px", height: "2px", background: "var(--blue)", marginBottom: "16px" }} />
                 <h3 style={{ fontFamily: FD, fontSize: "1.35rem", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "10px", lineHeight: 1.15 }}>Dust and debris hide what inspectors need to see</h3>
-                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>A dirty post-construction space isn't just unpleasant — it can obscure issues and delay occupancy approval. We clear the way for a clean inspection.</p>
+                <p style={{ fontFamily: FS, fontSize: "0.875rem", color: "var(--green)", opacity: 0.6, lineHeight: 1.75, margin: 0 }}>A dirty post-construction space isn&rsquo;t just unpleasant — it can obscure issues and delay occupancy approval. We clear the way for a clean inspection.</p>
               </div>
               <div style={{ padding: "36px 40px 36px 0", paddingLeft: 2 > 0 ? "40px" : "0", borderLeft: 2 > 0 ? "1px solid var(--border)" : "none" }}>
                 <div style={{ fontFamily: FD, fontSize: "4rem", letterSpacing: "-0.03em", color: "rgba(105,150,173,0.12)", lineHeight: 1, marginBottom: "12px" }}>03</div>
@@ -330,7 +344,7 @@ export default function ConstructionSitesPage() {
                   ))}
                 </div>
                 <blockquote style={{ fontFamily: FS, fontSize: "0.9rem", color: "var(--green)", opacity: 0.8, lineHeight: 1.75, fontStyle: "italic", marginBottom: "24px", position: "relative", zIndex: 1 }}>
-                  &ldquo;I've worked with a lot of cleanup crews. Ovaro is the first one I've added to my standard vendor list. They know what construction leaves behind and they get it all.&rdquo;
+                  &ldquo;I&rsquo;ve worked with a lot of cleanup crews. Ovaro is the first one I&rsquo;ve added to my standard vendor list. They know what construction leaves behind and they get it all.&rdquo;
                 </blockquote>
                 <div style={{ height: "1px", background: "var(--border)", marginBottom: "18px" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -377,7 +391,7 @@ export default function ConstructionSitesPage() {
           <div style={{ maxWidth:"600px",margin:"0 auto" }}>
             <h2 style={{ fontFamily:FD,fontSize:"clamp(2rem,4vw,3.25rem)",letterSpacing:"-0.022em",color:"#fff",lineHeight:1.05,marginBottom:"16px" }}>Built to spec. Cleaned to match.</h2>
             <p style={{ fontFamily:FS,fontSize:"1rem",color:"rgba(255,255,255,0.75)",lineHeight:1.7,marginBottom:"36px" }}>Your general contractor has a deadline. Ovaro has your cleanup covered — from rough debris removal through final inspection-ready polish.</p>
-            <a href="/get-a-quote" className="btn-white">Get a Free Quote</a>
+            <Link href="/get-a-quote" className="btn-white">Get a Free Quote</Link>
           </div>
         </section>
 

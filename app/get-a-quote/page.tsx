@@ -1,6 +1,9 @@
 "use client";
+import Link from "next/link";
 
 import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { NavDropdown } from "../components/NavDropdown";
 import { FacilitiesDropdown } from "../components/FacilitiesDropdown";
 import { Footer } from "../components/Footer";
@@ -43,6 +46,7 @@ const frequencies = [
 type Status = "idle" | "sending" | "success" | "error";
 
 export default function GetAQuotePage() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [selectedService, setSelectedService] = useState("");
 
@@ -75,7 +79,12 @@ export default function GetAQuotePage() {
         body: JSON.stringify(data),
       });
       const json = await res.json();
-      setStatus(json.success ? "success" : "error");
+      if (json.success) {
+        // Redirect to the dedicated confirmation page (clean conversion event).
+        router.push("/thank-you");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
@@ -98,9 +107,9 @@ export default function GetAQuotePage() {
               <a key={label} href={href} className="nav-link" style={{ fontFamily:FS }}>{label}</a>
             ))}
           </div>
-          <a href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem",background:"var(--green)" }}>
+          <Link href="/get-a-quote" className="btn-primary nav-cta-desktop" style={{ padding:"10px 22px",fontSize:"0.875rem",background:"var(--green)" }}>
             Get a Quote
-          </a>
+          </Link>
           <MobileNav />
         </div>
       </nav>
@@ -114,7 +123,7 @@ export default function GetAQuotePage() {
 
             {/* Breadcrumb */}
             <div style={{ display:"flex",alignItems:"center",gap:"8px",marginBottom:"32px",fontFamily:FS,fontSize:"0.8rem",color:"var(--green)",opacity:0.45 }}>
-              <a href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</a>
+              <Link href="/" style={{ textDecoration:"none",color:"inherit" }}>Home</Link>
               <span>/</span>
               <span style={{ color:"var(--blue)",opacity:1 }}>Get a Quote</span>
             </div>
@@ -162,6 +171,17 @@ export default function GetAQuotePage() {
                 terrell@ovarocommercial.com
               </a>
             </div>
+
+            {/* Branded team photo — real-team presence at the point of conversion */}
+            <div style={{ position:"relative",width:"100%",height:"300px",borderRadius:"14px",overflow:"hidden",marginTop:"32px",boxShadow:"0 16px 48px rgba(27,61,47,0.12)" }}>
+              <Image
+                src="/images/Team Portrait 2.webp"
+                alt="An Ovaro Commercial team member ready to service your Austin facility"
+                fill
+                sizes="(max-width: 900px) 100vw, 520px"
+                style={{ objectFit:"cover",objectPosition:"center 20%" }}
+              />
+            </div>
           </div>
         </div>
 
@@ -184,7 +204,7 @@ export default function GetAQuotePage() {
                 <p style={{ fontFamily:FS,fontSize:"1rem",color:"var(--green)",opacity:0.6,lineHeight:1.75,marginBottom:"32px",maxWidth:"380px",margin:"0 auto 32px" }}>
                   Terrell will review your details and respond within 2 hours with a custom cleaning plan. Check your inbox — and your spam folder just in case.
                 </p>
-                <a href="/" className="btn-primary">Back to Home</a>
+                <Link href="/" className="btn-primary">Back to Home</Link>
               </div>
             ) : (
               /* ── Form ── */
