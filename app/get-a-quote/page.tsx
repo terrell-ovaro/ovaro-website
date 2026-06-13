@@ -309,9 +309,9 @@ export default function GetAQuotePage() {
                 <div className="mobile-form-row" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"20px" }}>
                   <div className="form-group">
                     <label className="form-label" style={{ fontFamily:FS }}>
-                      Street Address <span style={{ color:"var(--blue)" }}>*</span>
+                      Street Address <span style={{ color:"var(--green)", opacity:0.4, fontWeight:400 }}>(optional)</span>
                     </label>
-                    <input name="address" type="text" required className="form-input" placeholder="123 Main St" />
+                    <input name="address" type="text" className="form-input" placeholder="123 Main St" />
                   </div>
                   <div className="form-group">
                     <label className="form-label" style={{ fontFamily:FS }}>City / Area</label>

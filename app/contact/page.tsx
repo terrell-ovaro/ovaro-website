@@ -121,6 +121,9 @@ export default function ContactPage() {
                   <div style={{ fontFamily: FD, fontSize: "1.45rem", letterSpacing: "-0.01em", color: "var(--green)", lineHeight: 1 }}>
                     (210) 904-6974
                   </div>
+                  <div style={{ fontFamily: FS, fontSize: "0.72rem", color: "var(--green)", opacity: 0.45, marginTop: "4px" }}>
+                    Serving the Greater Austin metro
+                  </div>
                   <div className="widget-cta" style={{ fontFamily: FS, marginTop: "5px" }}>
                     Tap to call →
                   </div>

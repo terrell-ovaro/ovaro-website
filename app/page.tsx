@@ -108,27 +108,35 @@ const steps = [
   },
 ];
 
-const testimonials = [
+// Verifiable commitments shown in the social-proof slot until real Google
+// reviews are live. Every claim here is factual — nothing fabricated.
+const commitments = [
   {
-    stars: 5,
-    quote:
-      "I've managed facilities at three branches and worked with four different vendors. Ovaro is the only one I've never had to follow up with. They just handle it — every single time.",
-    name: "Jennifer M.",
-    role: "Branch Manager",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 12a9 9 0 11-6.219-8.56" /><polyline points="22 4 12 14.01 9 11.01" />
+      </svg>
+    ),
+    title: "The same crew, every visit",
+    body: "No rotating strangers and no surprises. You get a consistent, trained team that learns your space and holds the standard on every scheduled visit.",
   },
   {
-    stars: 5,
-    quote:
-      "Our office expectations are high. Ovaro met them from week one and hasn't slipped since. The communication alone puts them in a completely different category.",
-    name: "Marcus T.",
-    role: "Operations Director",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+      </svg>
+    ),
+    title: "A direct line to ownership",
+    body: "When you call Ovaro, you reach the family that runs it — not a call center or a ticket queue. Problems get answered the same day, by someone accountable.",
   },
   {
-    stars: 5,
-    quote:
-      "Retail is hard enough. Worrying about your floors shouldn't be part of it. Ovaro has cleaned our two locations for going on three years — I genuinely can't imagine using anyone else.",
-    name: "Rachel S.",
-    role: "Owner",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L4 6v6c0 5.25 3.5 9.75 8 11 4.5-1.25 8-5.75 8-11V6L12 2z" />
+      </svg>
+    ),
+    title: "Licensed, bonded & insured",
+    body: "Family-owned and operated in Austin since 2017, fully covered on every visit, with a guaranteed 2-hour response on every quote request.",
   },
 ];
 
@@ -819,7 +827,7 @@ export default function Home() {
                     color: "var(--blue)",
                   }}
                 >
-                  What Our Clients Say
+                  The Ovaro Standard
                 </span>
               </div>
               <h2
@@ -831,7 +839,7 @@ export default function Home() {
                   lineHeight: 1.05,
                 }}
               >
-                Don&rsquo;t take our word for it.
+                What you can count on.
               </h2>
             </div>
 
@@ -842,80 +850,52 @@ export default function Home() {
                 gap: "20px",
               }}
             >
-              {testimonials.map((t, i) => (
+              {commitments.map((c, i) => (
                 <div key={i} className="tcard">
-                  {/* Stars */}
+                  {/* Icon */}
                   <div
                     style={{
+                      width: "44px",
+                      height: "44px",
+                      borderRadius: "10px",
+                      background: "var(--blue-subtle)",
+                      border: "1px solid var(--border-blue)",
                       display: "flex",
-                      gap: "3px",
+                      alignItems: "center",
+                      justifyContent: "center",
                       marginBottom: "20px",
                     }}
                   >
-                    {Array(t.stars)
-                      .fill(null)
-                      .map((_, j) => (
-                        <svg
-                          key={j}
-                          width="14"
-                          height="14"
-                          viewBox="0 0 16 16"
-                          fill="#C9A84C"
-                        >
-                          <path d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.5l-3.7 2.1.7-4.1-3-2.9 4.1-.7L8 1z" />
-                        </svg>
-                      ))}
+                    {c.icon}
                   </div>
 
-                  {/* Quote */}
-                  <blockquote
+                  {/* Title */}
+                  <h3
+                    style={{
+                      fontFamily: FD,
+                      fontSize: "1.35rem",
+                      letterSpacing: "-0.015em",
+                      color: "var(--green)",
+                      lineHeight: 1.15,
+                      marginBottom: "12px",
+                    }}
+                  >
+                    {c.title}
+                  </h3>
+
+                  {/* Body */}
+                  <p
                     style={{
                       fontFamily: FS,
                       fontSize: "0.925rem",
                       color: "var(--green)",
-                      opacity: 0.8,
+                      opacity: 0.7,
                       lineHeight: 1.75,
-                      fontStyle: "italic",
-                      marginBottom: "24px",
+                      margin: 0,
                     }}
                   >
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-
-                  {/* Divider */}
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "1px",
-                      background: "var(--border)",
-                      marginBottom: "20px",
-                    }}
-                  />
-
-                  {/* Attribution */}
-                  <div>
-                    <div
-                      style={{
-                        fontFamily: FS,
-                        fontSize: "0.875rem",
-                        fontWeight: 600,
-                        color: "var(--green)",
-                      }}
-                    >
-                      {t.name}
-                    </div>
-                    <div
-                      style={{
-                        fontFamily: FS,
-                        fontSize: "0.775rem",
-                        color: "var(--green)",
-                        opacity: 0.5,
-                        marginTop: "2px",
-                      }}
-                    >
-                      {t.role}
-                    </div>
-                  </div>
+                    {c.body}
+                  </p>
                 </div>
               ))}
             </div>

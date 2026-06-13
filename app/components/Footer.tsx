@@ -106,7 +106,7 @@ export function Footer() {
       <div style={{ borderTop: "1px solid rgba(241,237,226,0.06)", marginTop: "48px", padding: "20px 24px" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }} className="footer-bottom-bar">
           <p style={{ fontFamily: FS, fontSize: "0.75rem", color: "rgba(241,237,226,0.28)" }}>
-            © 2025 Ovaro Commercial LLC. All rights reserved.
+            © {new Date().getFullYear()} Ovaro Commercial LLC. All rights reserved.
           </p>
           <p style={{ fontFamily: FS, fontSize: "0.75rem", color: "rgba(241,237,226,0.28)" }}>
             Licensed &amp; Insured &nbsp;·&nbsp; Austin, TX &nbsp;·&nbsp; Est. 2017
