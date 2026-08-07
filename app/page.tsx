@@ -301,15 +301,15 @@ export default function Home() {
               {/* Hero photo — right (stacks below text on mobile/tablet) */}
               <div
                 className="e2 float hero-photo"
-                style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, width: "460px" }}
+                style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, width: "510px" }}
               >
-                <div className="hero-photo-inner" style={{ position: "relative", width: "420px", height: "520px", borderRadius: "14px", overflow: "hidden", boxShadow: "0 24px 72px rgba(27,61,47,0.16), 0 4px 16px rgba(27,61,47,0.08)" }}>
+                <div className="hero-photo-inner" style={{ position: "relative", width: "470px", height: "580px", borderRadius: "14px", overflow: "hidden", boxShadow: "0 24px 72px rgba(27,61,47,0.16), 0 4px 16px rgba(27,61,47,0.08)" }}>
                   <Image
                     src="/images/hero-office.webp"
                     alt="A pristine, modern Austin office interior maintained by Ovaro Commercial"
                     fill
                     priority
-                    sizes="(max-width: 1023px) 480px, 420px"
+                    sizes="(max-width: 1023px) 480px, 470px"
                     style={{ objectFit: "cover", objectPosition: "center 50%" }}
                   />
                   {/* Glass badge overlay */}
