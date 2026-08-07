@@ -305,12 +305,12 @@ export default function Home() {
               >
                 <div className="hero-photo-inner" style={{ position: "relative", width: "420px", height: "520px", borderRadius: "14px", overflow: "hidden", boxShadow: "0 24px 72px rgba(27,61,47,0.16), 0 4px 16px rgba(27,61,47,0.08)" }}>
                   <Image
-                    src="/images/Team Portrait 1.webp"
-                    alt="The Ovaro Commercial team — friendly, professional cleaners serving Austin businesses"
+                    src="/images/hero-office.webp"
+                    alt="A pristine, modern Austin office interior maintained by Ovaro Commercial"
                     fill
                     priority
                     sizes="(max-width: 1023px) 480px, 420px"
-                    style={{ objectFit: "cover", objectPosition: "center 30%" }}
+                    style={{ objectFit: "cover", objectPosition: "center 50%" }}
                   />
                   {/* Glass badge overlay */}
                   <div style={{ position: "absolute", bottom: "20px", left: "20px", right: "20px", background: "rgba(255,255,255,0.92)", borderRadius: "10px", padding: "14px 18px", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.6)" }}>
@@ -720,8 +720,8 @@ export default function Home() {
                 style={{ position: "relative", width: "100%", height: "520px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 24px 72px rgba(0,0,0,0.28)" }}
               >
                 <Image
-                  src="/images/Janitorial 9.jpg"
-                  alt="The Ovaro Commercial team at work in an Austin office"
+                  src="/images/Commercial Cleaning 1.webp"
+                  alt="The Ovaro Commercial team cleaning a bright, modern Austin office"
                   fill
                   sizes="(max-width: 900px) 100vw, 600px"
                   style={{ objectFit: "cover", objectPosition: "center" }}

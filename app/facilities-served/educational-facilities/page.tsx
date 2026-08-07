@@ -90,7 +90,7 @@ export default function EducationalFacilitiesPage() {
         {/* ── Hero Photo ── */}
         <div className="photo-strip">
           <Image
-            src="/images/Janitorial 6.jpg"
+            src="/images/educational-facilities.webp"
             alt="Cleaning a school common area and cafeteria in Austin"
             fill
             sizes="(max-width: 1028px) 100vw, 980px"

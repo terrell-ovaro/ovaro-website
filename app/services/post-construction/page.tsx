@@ -270,7 +270,7 @@ export default function PostConstructionPage() {
         {/* ── Hero Photo ── */}
         <div className="photo-strip">
           <Image
-            src="/images/Janitorial 8.jpg"
+            src="/images/post-construction.webp"
             alt="Dust and debris removal after construction in an Austin facility"
             fill
             sizes="(max-width: 1028px) 100vw, 980px"

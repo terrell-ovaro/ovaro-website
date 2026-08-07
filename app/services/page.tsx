@@ -221,7 +221,7 @@ export default function ServicesPage() {
         {/* ── Hero Photo ── */}
         <div className="photo-strip">
           <Image
-            src="/images/Janitorial 3.jpg"
+            src="/images/services-overview.webp"
             alt="Ovaro Commercial cleaning crew servicing a professional Austin business"
             fill
             sizes="(max-width: 1028px) 100vw, 980px"

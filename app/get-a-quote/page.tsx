@@ -185,8 +185,8 @@ export default function GetAQuotePage() {
             {/* Branded team photo — real-team presence at the point of conversion */}
             <div style={{ position:"relative",width:"100%",height:"300px",borderRadius:"14px",overflow:"hidden",marginTop:"32px",boxShadow:"0 16px 48px rgba(27,61,47,0.12)" }}>
               <Image
-                src="/images/Team Portrait 2.webp"
-                alt="An Ovaro Commercial team member ready to service your Austin facility"
+                src="/images/Day Porter 1.webp"
+                alt="A friendly Ovaro Commercial team member ready to service your Austin facility"
                 fill
                 sizes="(max-width: 900px) 100vw, 520px"
                 style={{ objectFit:"cover",objectPosition:"center 20%" }}

@@ -90,7 +90,7 @@ export default function ConstructionSitesPage() {
         {/* ── Hero Photo ── */}
         <div className="photo-strip">
           <Image
-            src="/images/Construction Debris 1.webp"
+            src="/images/construction-sites.webp"
             alt="Ovaro crew removing construction debris and dust from a commercial build-out in Austin"
             fill
             sizes="(max-width: 1028px) 100vw, 980px"

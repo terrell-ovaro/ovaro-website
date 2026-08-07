@@ -90,7 +90,7 @@ export default function OfficeCleaningPage() {
         {/* ── Hero Photo ── */}
         <div className="photo-strip">
           <Image
-            src="/images/Vacuuming 1.webp"
+            src="/images/office-cleaning.webp"
             alt="Commercial cleaner vacuuming a professional Austin office space"
             fill
             sizes="(max-width: 1028px) 100vw, 980px"

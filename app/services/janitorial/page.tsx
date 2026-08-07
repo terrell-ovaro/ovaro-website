@@ -264,7 +264,7 @@ export default function JanitorialPage() {
         {/* ── Hero Photo ── */}
         <div className="photo-strip">
           <Image
-            src="/images/Janitorial 2.webp"
+            src="/images/janitorial.webp"
             alt="Commercial janitor vacuuming a professional office lobby in Austin"
             fill
             sizes="(max-width: 1028px) 100vw, 980px"

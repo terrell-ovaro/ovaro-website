@@ -90,8 +90,8 @@ export default function PlacesOfPrayerPage() {
         {/* ── Hero Photo ── */}
         <div className="photo-strip">
           <Image
-            src="/images/Janitorial 5.webp"
-            alt="Clean, well-maintained corridor in an Austin place of worship"
+            src="/images/places-of-prayer.webp"
+            alt="Ovaro Commercial team cleaning the pews and sanctuary of an Austin place of worship"
             fill
             sizes="(max-width: 1028px) 100vw, 980px"
             style={{ objectFit:"cover",objectPosition:"center 40%" }}

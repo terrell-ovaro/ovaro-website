@@ -90,7 +90,7 @@ export default function FitnessCentersPage() {
         {/* ── Hero Photo ── */}
         <div className="photo-strip">
           <Image
-            src="/images/Bathroom Clean 1.jpg"
+            src="/images/fitness-centers.webp"
             alt="Sanitizing a fitness center locker room and restroom in Austin"
             fill
             sizes="(max-width: 1028px) 100vw, 980px"
