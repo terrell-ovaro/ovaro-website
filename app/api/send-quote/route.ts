@@ -99,7 +99,8 @@ export async function POST(req: NextRequest) {
 
     const { error } = await resend.emails.send({
       from: process.env.QUOTE_FROM || "Ovaro Commercial <quotes@ovarocommercial.com>",
-      to: process.env.QUOTE_TO || "contact@ovarocommercial.com",
+      // Delivery inbox — intentionally not the contact@ address shown on the site
+      to: process.env.QUOTE_TO || "terrell@ovarocommercial.com",
       replyTo: data.email,
       subject: `Quote Request — ${data.businessName} (${data.service || "General"})`,
       html,
