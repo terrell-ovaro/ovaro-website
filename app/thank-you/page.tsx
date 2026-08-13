@@ -150,7 +150,7 @@ export default function ThankYouPage() {
                 Need to reach us sooner? Call{" "}
                 <a href="tel:2109046974" style={{ color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>(210) 904-6974</a>
                 {" "}or email{" "}
-                <a href="mailto:terrell@ovarocommercial.com" style={{ color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>terrell@ovarocommercial.com</a>.
+                <a href="mailto:contact@ovarocommercial.com" style={{ color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>contact@ovarocommercial.com</a>.
               </p>
             </div>
           </div>

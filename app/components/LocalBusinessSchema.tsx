@@ -13,7 +13,7 @@ const schema = {
     "Family-owned commercial cleaning company serving Greater Austin, TX since 2017. Janitorial, green cleaning, day porter, post-construction, and deep cleaning for offices, financial institutions, retail, and more.",
   url: BASE_URL,
   telephone: "+1-210-904-6974",
-  email: "terrell@ovarocommercial.com",
+  email: "contact@ovarocommercial.com",
   foundingDate: "2017",
   priceRange: "$$",
   image: `${BASE_URL}/opengraph-image`,

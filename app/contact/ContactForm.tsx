@@ -124,7 +124,7 @@ export function ContactForm({ services }: { services: string[] }) {
 
       {status === "error" && (
         <p style={{ fontFamily: FS, fontSize: "0.85rem", color: "#b4452f" }}>
-          Something went wrong sending your request. Please call us at (210) 904-6974 or email terrell@ovarocommercial.com.
+          Something went wrong sending your request. Please call us at (210) 904-6974 or email contact@ovarocommercial.com.
         </p>
       )}
     </form>

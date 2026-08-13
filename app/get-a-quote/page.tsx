@@ -177,8 +177,8 @@ export default function GetAQuotePage() {
               <a href="tel:2109046974" style={{ display:"block",fontFamily:FD,fontSize:"1.25rem",letterSpacing:"-0.01em",color:"var(--green)",textDecoration:"none",marginBottom:"6px" }}>
                 (210) 904-6974
               </a>
-              <a href="mailto:terrell@ovarocommercial.com" style={{ fontFamily:FS,fontSize:"0.875rem",color:"var(--blue)",textDecoration:"none" }}>
-                terrell@ovarocommercial.com
+              <a href="mailto:contact@ovarocommercial.com" style={{ fontFamily:FS,fontSize:"0.875rem",color:"var(--blue)",textDecoration:"none" }}>
+                contact@ovarocommercial.com
               </a>
             </div>
 
@@ -359,7 +359,7 @@ export default function GetAQuotePage() {
 
                 {status === "error" && (
                   <p style={{ fontFamily:FS,fontSize:"0.85rem",color:"#c0392b",padding:"12px 16px",borderRadius:"6px",background:"rgba(192,57,43,0.06)",border:"1px solid rgba(192,57,43,0.15)" }}>
-                    Something went wrong sending your request. Please call us at (210) 904-6974 or email terrell@ovarocommercial.com directly.
+                    Something went wrong sending your request. Please call us at (210) 904-6974 or email contact@ovarocommercial.com directly.
                   </p>
                 )}
 

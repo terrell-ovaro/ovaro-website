@@ -76,8 +76,8 @@ export function Footer() {
               <a href="tel:2109046974" style={{ fontFamily: FD, fontSize: "1.2rem", letterSpacing: "-0.01em", color: "var(--cream)", textDecoration: "none" }}>
                 (210) 904-6974
               </a>
-              <a href="mailto:terrell@ovarocommercial.com" style={{ fontFamily: FS, fontSize: "0.875rem", color: "rgba(105,150,173,0.9)", textDecoration: "none" }}>
-                terrell@ovarocommercial.com
+              <a href="mailto:contact@ovarocommercial.com" style={{ fontFamily: FS, fontSize: "0.875rem", color: "rgba(105,150,173,0.9)", textDecoration: "none" }}>
+                contact@ovarocommercial.com
               </a>
             </div>
 
